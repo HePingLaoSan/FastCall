@@ -1,0 +1,6 @@
+framework module FCContactModel {
+  umbrella header "FCContactModel.h"
+
+  export *
+  module * { export * }
+}
