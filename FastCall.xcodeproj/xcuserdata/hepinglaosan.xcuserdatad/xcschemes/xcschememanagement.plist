@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FCContactModel.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>FastCall.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>FastCallExt.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>404F96C11DEBCC97006ECE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>404F96DD1DEBCC97006ECE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>404F96E81DEBCC97006ECE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>404F96FE1DEBCE8D006ECE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>404F973E1DEC2D0D006ECE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>404F97461DEC2D0E006ECE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

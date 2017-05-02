@@ -63,6 +63,7 @@
     });
 }
 -(void)didSelectContact:(ContactModel *)contactModel{
+
     NSUInteger index = [dataManager.dataSourcesArray indexOfObjectPassingTest:^BOOL(ContactModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj.contact_id isEqualToString:contactModel.contact_id]) {
             return YES;
@@ -91,6 +92,9 @@
         [userDef synchronize];
     }
     [_myCollectionView reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_addContactBtn resetAnimation];
+    });
 }
 
 #pragma mark - FCCollectionLayoutDelegate
