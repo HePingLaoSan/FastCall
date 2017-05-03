@@ -25,6 +25,7 @@
 
 @implementation FCBaseViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -35,7 +36,7 @@
     _myCollectionView.alwaysBounceVertical = YES;
 }
 
-
+#pragma mark - CollectionView Delegate & DataSources
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return dataManager.dataSourcesArray.count;
 }
@@ -80,14 +81,14 @@
     if (index >= dataManager.dataSourcesArray.count) {
         [dataManager.dataSourcesArray addObject:contactModel];
         NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:dataManager.dataSourcesArray];
-        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.FastTool"];
+        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
         [userDef setObject:storeData forKey:@"localData"];
         [userDef synchronize];
     }else{
         //replace
         [dataManager.dataSourcesArray replaceObjectAtIndex:index withObject:contactModel];
         NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:dataManager.dataSourcesArray];
-        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.FastTool"];
+        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
         [userDef setObject:storeData forKey:@"localData"];
         [userDef synchronize];
     }
@@ -99,45 +100,34 @@
 
 #pragma mark - FCCollectionLayoutDelegate
 -(void)moveItemAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath{
-    ContactModel *model = dataManager.dataSourcesArray[fromIndexPath.row];
-    [dataManager.dataSourcesArray removeObject:model];
-    [dataManager.dataSourcesArray insertObject:model atIndex:toIndexPath.row];
-    
+    [dataManager moveItemFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
 }
 
 -(void)didChangeEditState:(BOOL)inEditState{
     if (inEditState) {
         inEditMode = YES;
         [_myCollectionView performBatchUpdates:^{
-            
         } completion:^(BOOL finished) {
-            
         }];
     }else{
         inEditMode = NO;
         [self.myCollectionView reloadData];
     }
-
 }
 
 #pragma mark - Target Method
 
 - (IBAction)clickInfoBtn:(id)sender {
     
-    
 }
 
 
 - (IBAction)clickAddBtn:(id)sender {
     [_addContactBtn startAnimation];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //perform some animation
-        FCContactManager *manager = [FCContactManager sharedInstance];
-        manager.delegate = self;
-        [manager showContactUI];
-//    });
-
-    
+    //perform some animation
+    FCContactManager *manager = [FCContactManager sharedInstance];
+    manager.delegate = self;
+    [manager showContactUI];
 }
 
 -(void)deleteItem:(UIButton *)deleteBtn event:(UIEvent *)event{

@@ -50,6 +50,8 @@
 		404F97851DEC4991006ECE21 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F97831DEC4991006ECE21 /* ContactModel.m */; };
 		404F97861DEC49BC006ECE21 /* ContactModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 404F97821DEC4991006ECE21 /* ContactModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		404F97871DEC49C5006ECE21 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F97831DEC4991006ECE21 /* ContactModel.m */; };
+		6BC67BAD1EB99CD600816ABE /* FCWidgetSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */; };
+		6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,8 +130,8 @@
 		402C238F1EB300D300DC793C /* FCCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCollectionView.m; sourceTree = "<group>"; };
 		402C23921EB300F300DC793C /* FCCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCollectionLayout.h; sourceTree = "<group>"; };
 		402C23931EB300F300DC793C /* FCCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCollectionLayout.m; sourceTree = "<group>"; };
-		402C23961EB30F7100DC793C /* FCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDataManager.h; sourceTree = "<group>"; };
-		402C23971EB30F7100DC793C /* FCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDataManager.m; sourceTree = "<group>"; };
+		402C23961EB30F7100DC793C /* FCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCDataManager.h; path = ../FCDataManager.h; sourceTree = "<group>"; };
+		402C23971EB30F7100DC793C /* FCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FCDataManager.m; path = ../FCDataManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		402C239A1EB3231300DC793C /* FCSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSettingViewController.h; sourceTree = "<group>"; };
 		402C239B1EB3231300DC793C /* FCSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSettingViewController.m; sourceTree = "<group>"; };
 		402C239D1EB346E200DC793C /* FCAddContactButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAddContactButton.h; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		404F96C81DEBCC97006ECE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		404F96C91DEBCC97006ECE21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		404F96CB1DEBCC97006ECE21 /* FCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FCBaseViewController.h; path = ../FCBaseViewController.h; sourceTree = "<group>"; };
-		404F96CC1DEBCC97006ECE21 /* FCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FCBaseViewController.m; path = ../FCBaseViewController.m; sourceTree = "<group>"; };
+		404F96CC1DEBCC97006ECE21 /* FCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FCBaseViewController.m; path = ../FCBaseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		404F96CF1DEBCC97006ECE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		404F96D21DEBCC97006ECE21 /* FastCall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FastCall.xcdatamodel; sourceTree = "<group>"; };
 		404F96D71DEBCC97006ECE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 		404F96FF1DEBCE8D006ECE21 /* FastCallExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FastCallExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		404F97011DEBCE8D006ECE21 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		404F97041DEBCE8D006ECE21 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		404F97051DEBCE8D006ECE21 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		404F97051DEBCE8D006ECE21 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TodayViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		404F97081DEBCE8D006ECE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		404F970A1DEBCE8D006ECE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		404F97121DEBD32F006ECE21 /* FastCallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastCallCell.h; sourceTree = "<group>"; };
@@ -179,6 +181,10 @@
 		404F97771DEC4838006ECE21 /* FCContactModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FCContactModel.framework; sourceTree = "<group>"; };
 		404F97821DEC4991006ECE21 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
 		404F97831DEC4991006ECE21 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		6BC67BAB1EB99CD600816ABE /* FCWidgetSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWidgetSettingViewController.h; sourceTree = "<group>"; };
+		6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWidgetSettingViewController.m; sourceTree = "<group>"; };
+		6BC67BAE1EB9ABB300816ABE /* FCWidgetSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWidgetSettingManager.h; sourceTree = "<group>"; };
+		6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCWidgetSettingManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,8 +280,6 @@
 				404F971E1DEBED52006ECE21 /* ContactsManager */,
 				404F96C81DEBCC97006ECE21 /* AppDelegate.h */,
 				404F96C91DEBCC97006ECE21 /* AppDelegate.m */,
-				402C23961EB30F7100DC793C /* FCDataManager.h */,
-				402C23971EB30F7100DC793C /* FCDataManager.m */,
 				404F96CE1DEBCC97006ECE21 /* Main.storyboard */,
 				404F96D61DEBCC97006ECE21 /* LaunchScreen.storyboard */,
 				404F96D91DEBCC97006ECE21 /* Info.plist */,
@@ -343,8 +347,12 @@
 		404F971E1DEBED52006ECE21 /* ContactsManager */ = {
 			isa = PBXGroup;
 			children = (
+				402C23961EB30F7100DC793C /* FCDataManager.h */,
+				402C23971EB30F7100DC793C /* FCDataManager.m */,
 				404F971F1DEBED52006ECE21 /* KTSContactsManager.h */,
 				404F97201DEBED52006ECE21 /* KTSContactsManager.m */,
+				6BC67BAE1EB9ABB300816ABE /* FCWidgetSettingManager.h */,
+				6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */,
 			);
 			path = ContactsManager;
 			sourceTree = "<group>";
@@ -356,6 +364,8 @@
 				404F96CC1DEBCC97006ECE21 /* FCBaseViewController.m */,
 				402C239A1EB3231300DC793C /* FCSettingViewController.h */,
 				402C239B1EB3231300DC793C /* FCSettingViewController.m */,
+				6BC67BAB1EB99CD600816ABE /* FCWidgetSettingViewController.h */,
+				6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -660,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC67BAD1EB99CD600816ABE /* FCWidgetSettingViewController.m in Sources */,
 				404F96CD1DEBCC97006ECE21 /* FCBaseViewController.m in Sources */,
 				402C23901EB300D300DC793C /* FCCollectionView.m in Sources */,
 				404F96CA1DEBCC97006ECE21 /* AppDelegate.m in Sources */,
@@ -668,6 +679,7 @@
 				402C239F1EB346E200DC793C /* FCAddContactButton.m in Sources */,
 				402C23941EB300F300DC793C /* FCCollectionLayout.m in Sources */,
 				402C239C1EB3231300DC793C /* FCSettingViewController.m in Sources */,
+				6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */,
 				404F97841DEC4991006ECE21 /* ContactModel.m in Sources */,
 				404F96C71DEBCC97006ECE21 /* main.m in Sources */,
 				404F97211DEBED52006ECE21 /* KTSContactsManager.m in Sources */,

@@ -35,7 +35,7 @@
     //设置滚动方向
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 250);
+    self.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 100);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

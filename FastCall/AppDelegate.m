@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FCWidgetSettingManager.h"
 
 #define iOS10Above ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #define iOS9Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
@@ -24,6 +25,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if ([FCWidgetSettingManager checkWidgetInstalled]) {
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        UIViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    }
     return YES;
 }
 

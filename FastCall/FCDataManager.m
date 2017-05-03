@@ -15,7 +15,7 @@
 -(instancetype)init{
     self = [super init];
     
-    NSData *dataLocal = [[[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.FastTool"] objectForKey:@"localData"];
+    NSData *dataLocal = [[[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"] objectForKey:@"localData"];
     NSArray *contactsLocal = [NSKeyedUnarchiver unarchiveObjectWithData:dataLocal];
     if (contactsLocal==nil) {
         _dataSourcesArray = [@[] mutableCopy];
@@ -41,11 +41,17 @@
     if (_dataSourcesArray.count >indexPath) {
         [self.dataSourcesArray removeObjectAtIndex:indexPath];
         NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:self.dataSourcesArray];
-        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.FastTool"];
+        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
         [userDef setObject:storeData forKey:@"localData"];
         [userDef synchronize];
     }
 
+}
+
+-(void)moveItemFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex{
+    ContactModel *model = self.dataSourcesArray[fromIndex];
+    [self.dataSourcesArray removeObject:model];
+    [self.dataSourcesArray insertObject:model atIndex:toIndex];
 }
 
 @end

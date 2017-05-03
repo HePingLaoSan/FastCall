@@ -17,4 +17,7 @@
 
 -(void)deleteItemAtIndexPath:(NSInteger)indexPath;
 
+
+-(void)moveItemFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+
 @end

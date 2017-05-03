@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,6 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCa-Pn-Ryp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.14420881892284571" green="0.2321836253020112" blue="0.30451315703169668" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bWy-aj-blZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -70,25 +76,6 @@
                                             <outlet property="contactName" destination="xz8-CF-wmd" id="Ihv-0T-ELq"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddContactCell" id="ed1-K5-hAD" customClass="AddContactCell">
-                                        <rect key="frame" x="90" y="10" width="70" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-rD-jWy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="8fy-rD-jWy" secondAttribute="trailing" id="APS-42-UrE"/>
-                                            <constraint firstAttribute="bottom" secondItem="8fy-rD-jWy" secondAttribute="bottom" id="afN-C1-wNz"/>
-                                            <constraint firstItem="8fy-rD-jWy" firstAttribute="top" secondItem="ed1-K5-hAD" secondAttribute="top" id="o93-D5-iMP"/>
-                                            <constraint firstItem="8fy-rD-jWy" firstAttribute="leading" secondItem="ed1-K5-hAD" secondAttribute="leading" id="uYw-wc-KJv"/>
-                                        </constraints>
-                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="M4Y-Lb-cyx" id="S9n-tG-lvH"/>
@@ -97,8 +84,12 @@
                             </collectionView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="JCa-Pn-Ryp" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="8d3-SB-m0I"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="JCa-Pn-Ryp" secondAttribute="bottom" id="EYA-3D-muN"/>
                             <constraint firstItem="bWy-aj-blZ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="IRV-SD-69W"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="bWy-aj-blZ" secondAttribute="bottom" id="UDE-6r-iMO"/>
+                            <constraint firstItem="JCa-Pn-Ryp" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="fhH-La-kNY"/>
+                            <constraint firstAttribute="trailing" secondItem="JCa-Pn-Ryp" secondAttribute="trailing" id="h5X-aA-fwB"/>
                             <constraint firstItem="bWy-aj-blZ" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="mHl-H0-K1X"/>
                             <constraint firstAttribute="trailing" secondItem="bWy-aj-blZ" secondAttribute="trailing" id="nDK-88-fUI"/>
                         </constraints>
@@ -110,6 +101,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="280"/>
                     <connections>
+                        <outlet property="infoLabel" destination="JCa-Pn-Ryp" id="Nbf-Ut-qGu"/>
                         <outlet property="myCollectionView" destination="bWy-aj-blZ" id="DKg-iy-sCa"/>
                     </connections>
                 </viewController>
@@ -118,7 +110,4 @@
             <point key="canvasLocation" x="33.600000000000001" y="37.781109445277366"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="plus" width="100" height="100"/>
-    </resources>
 </document>
