@@ -111,9 +111,11 @@
     if ([self currentWidgetState]) {
         UIStoryboard *storyboard = self.view.window.rootViewController.storyboard;
         UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
-        [self presentViewController:mainViewController animated:YES completion:^{
-            self.view.window.rootViewController = mainViewController;
-        }];
+        if (mainViewController) {
+            [self presentViewController:mainViewController animated:YES completion:^{
+                self.view.window.rootViewController = mainViewController;
+            }];
+        }
     }
 }
 @end

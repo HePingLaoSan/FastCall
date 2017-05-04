@@ -28,22 +28,19 @@
     return self;
 }
 
--(void)deleteItemFromDisk:(ContactModel *)model{
-    
-    
-    
-    
-    
+
+-(void)saveToDisk{
+    NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:self.dataSourcesArray];
+    NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
+    [userDef setObject:storeData forKey:@"localData"];
+    [userDef synchronize];
 }
 
 -(void)deleteItemAtIndexPath:(NSInteger)indexPath{
     
     if (_dataSourcesArray.count >indexPath) {
         [self.dataSourcesArray removeObjectAtIndex:indexPath];
-        NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:self.dataSourcesArray];
-        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
-        [userDef setObject:storeData forKey:@"localData"];
-        [userDef synchronize];
+        [self saveToDisk];
     }
 
 }
@@ -52,6 +49,7 @@
     ContactModel *model = self.dataSourcesArray[fromIndex];
     [self.dataSourcesArray removeObject:model];
     [self.dataSourcesArray insertObject:model atIndex:toIndex];
+    [self saveToDisk];
 }
 
 @end
