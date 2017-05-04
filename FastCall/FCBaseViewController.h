@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
 @property (weak, nonatomic) IBOutlet FCAddContactButton *addContactBtn;
+@property (weak, nonatomic) IBOutlet UILabel *emptyInfoLabel;
 
 @end
 

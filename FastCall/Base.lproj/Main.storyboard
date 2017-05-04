@@ -99,17 +99,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="两步完成一键拨号！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-4c-dpp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="nAq-Rl-6pT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.25882352939999997" green="0.58823529409999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击底部按钮添加联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At0-Gq-ekV">
+                                <rect key="frame" x="0.0" y="354" width="414" height="27.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.84683423859999996" green="0.23985968023015172" blue="0.30895868901557766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YCW-bt-hPq">
-                                <rect key="frame" x="0.0" y="310" width="414" height="326"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="572"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="3Eo-rz-M8C" customClass="FCCollectionLayout"/>
                                 <cells>
@@ -126,7 +123,7 @@
                                                         <constraint firstAttribute="width" secondItem="ZqP-Qm-a5m" secondAttribute="height" id="Nli-Jh-wPm"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eX-zP-sxn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="5eX-zP-sxn">
                                                     <rect key="frame" x="0.0" y="65" width="80" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -204,60 +201,37 @@
                                     <constraint firstAttribute="bottom" secondItem="btx-Va-lX5" secondAttribute="bottom" id="zHT-7V-8lw"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 点击底部加号，添加快速拨号联系人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq9-lw-GVh">
-                                <rect key="frame" x="20" y="260" width="374" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEn-wd-nBF">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="B5i-Af-z0B"/>
+                                    <constraint firstAttribute="height" constant="44" id="LHe-6m-JuJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.25882352939999997" green="0.58823529409999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.40103674519999999" green="0.64568981339999998" blue="0.84683423859999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 添加通知中心插件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmp-KU-Jbj">
-                                <rect key="frame" x="20" y="90" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Pdr-ac-9m9"/>
-                                    <constraint firstAttribute="height" constant="30" id="x8N-z9-Eeh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.25882352939999997" green="0.58823529409999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AO-X0-YEB">
-                                <rect key="frame" x="20" y="140" width="374" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="yF0-hb-496"/>
-                                </constraints>
-                                <state key="normal" title="点击查看添加插件教程">
-                                    <color key="titleColor" red="0.25882352939999997" green="0.58823529409999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hmp-KU-Jbj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="0Rn-aw-loh"/>
-                            <constraint firstItem="Mq9-lw-GVh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="1ER-4S-BKB"/>
+                            <constraint firstItem="bEn-wd-nBF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0b9-tk-ciR"/>
                             <constraint firstItem="cFt-Fu-HLr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2w3-by-4lB"/>
-                            <constraint firstAttribute="trailing" secondItem="63G-4c-dpp" secondAttribute="trailing" id="7Nu-Op-OQz"/>
+                            <constraint firstItem="At0-Gq-ekV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="376-YL-uSs"/>
+                            <constraint firstItem="At0-Gq-ekV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6De-uO-7tI"/>
                             <constraint firstAttribute="trailing" secondItem="YCW-bt-hPq" secondAttribute="trailing" id="93N-J3-6tM"/>
-                            <constraint firstItem="63G-4c-dpp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9CF-gu-frZ"/>
-                            <constraint firstItem="Mq9-lw-GVh" firstAttribute="top" secondItem="7AO-X0-YEB" secondAttribute="bottom" constant="20" id="BrO-df-C36"/>
-                            <constraint firstItem="7AO-X0-YEB" firstAttribute="top" secondItem="hmp-KU-Jbj" secondAttribute="bottom" constant="20" id="LlZ-tN-bFG"/>
-                            <constraint firstAttribute="trailing" secondItem="hmp-KU-Jbj" secondAttribute="trailing" constant="20" id="PKr-qs-tn2"/>
-                            <constraint firstItem="63G-4c-dpp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VxP-Jd-2XM"/>
-                            <constraint firstAttribute="trailing" secondItem="Mq9-lw-GVh" secondAttribute="trailing" constant="20" id="Yff-ut-NeT"/>
-                            <constraint firstItem="7AO-X0-YEB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="cnZ-6u-lU1"/>
+                            <constraint firstItem="At0-Gq-ekV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OrJ-hG-hi6"/>
+                            <constraint firstItem="bEn-wd-nBF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="U53-XT-fWO"/>
+                            <constraint firstItem="YCW-bt-hPq" firstAttribute="top" secondItem="bEn-wd-nBF" secondAttribute="bottom" id="c8u-q2-5jx"/>
                             <constraint firstAttribute="trailing" secondItem="cFt-Fu-HLr" secondAttribute="trailing" id="eGY-qc-Dch"/>
-                            <constraint firstItem="hmp-KU-Jbj" firstAttribute="top" secondItem="63G-4c-dpp" secondAttribute="bottom" constant="10" id="grH-zd-Egt"/>
                             <constraint firstItem="cFt-Fu-HLr" firstAttribute="top" secondItem="YCW-bt-hPq" secondAttribute="bottom" id="k9R-Ft-SbQ"/>
+                            <constraint firstAttribute="trailing" secondItem="bEn-wd-nBF" secondAttribute="trailing" id="mA5-gY-Phc"/>
                             <constraint firstItem="YCW-bt-hPq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nAo-io-9Ct"/>
-                            <constraint firstAttribute="trailing" secondItem="7AO-X0-YEB" secondAttribute="trailing" constant="20" id="nhB-LT-wYb"/>
+                            <constraint firstAttribute="trailing" secondItem="At0-Gq-ekV" secondAttribute="trailing" id="ufv-v8-SYq"/>
                             <constraint firstAttribute="bottom" secondItem="cFt-Fu-HLr" secondAttribute="bottom" id="yaE-CF-tVF"/>
-                            <constraint firstItem="YCW-bt-hPq" firstAttribute="top" secondItem="Mq9-lw-GVh" secondAttribute="bottom" constant="20" id="zqJ-dy-51F"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addContactBtn" destination="btx-Va-lX5" id="jk0-lg-OJu"/>
+                        <outlet property="emptyInfoLabel" destination="At0-Gq-ekV" id="REF-uF-GcL"/>
                         <outlet property="myCollectionView" destination="YCW-bt-hPq" id="DZV-3T-pdg"/>
                     </connections>
                 </viewController>

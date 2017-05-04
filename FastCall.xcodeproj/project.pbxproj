@@ -52,6 +52,7 @@
 		404F97871DEC49C5006ECE21 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F97831DEC4991006ECE21 /* ContactModel.m */; };
 		6BC67BAD1EB99CD600816ABE /* FCWidgetSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */; };
 		6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */; };
+		6BEF95D71EBACFFC00EDDD4B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,7 @@
 		6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWidgetSettingViewController.m; sourceTree = "<group>"; };
 		6BC67BAE1EB9ABB300816ABE /* FCWidgetSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWidgetSettingManager.h; sourceTree = "<group>"; };
 		6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCWidgetSettingManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEF95D71EBACFFC00EDDD4B /* MessageUI.framework in Frameworks */,
 				404F97781DEC4838006ECE21 /* FCContactModel.framework in Frameworks */,
 				404F97241DEBFD8A006ECE21 /* Contacts.framework in Frameworks */,
 				404F97251DEBFD8A006ECE21 /* ContactsUI.framework in Frameworks */,
@@ -320,6 +323,7 @@
 		404F97001DEBCE8D006ECE21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */,
 				404F97771DEC4838006ECE21 /* FCContactModel.framework */,
 				404F97221DEBFD8A006ECE21 /* Contacts.framework */,
 				404F97231DEBFD8A006ECE21 /* ContactsUI.framework */,

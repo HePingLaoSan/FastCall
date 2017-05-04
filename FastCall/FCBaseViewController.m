@@ -38,6 +38,11 @@
 
 #pragma mark - CollectionView Delegate & DataSources
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (dataManager.dataSourcesArray.count==0) {
+        _emptyInfoLabel.hidden = NO;
+    }else{
+        _emptyInfoLabel.hidden = YES;
+    }
     return dataManager.dataSourcesArray.count;
 }
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -137,6 +142,9 @@
     CGPoint currentPoint = [touch locationInView:_myCollectionView];
     NSIndexPath *indexPath = [_myCollectionView indexPathForItemAtPoint:currentPoint];
     if (indexPath.section == 0 && indexPath != nil) { //点击移除
+        inEditMode = NO;
+        FCCollectionLayout *layout = (FCCollectionLayout *)_myCollectionView.collectionViewLayout;
+        layout.inEditState = NO;
         [_myCollectionView performBatchUpdates:^{
             [_myCollectionView deleteItemsAtIndexPaths:@[indexPath]];
             [dataManager deleteItemAtIndexPath:indexPath.row]; //删除

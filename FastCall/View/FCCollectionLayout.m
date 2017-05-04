@@ -25,17 +25,17 @@
     [super awakeFromNib];
     CGFloat width = 80;
     //设置每个图片的大小
-    self.itemSize = CGSizeMake(width, width);
+    self.itemSize = CGSizeMake(width, width+20);
     //设置滚动方向的间距
     self.minimumLineSpacing = 10;
     //设置上方的反方向
     self.minimumInteritemSpacing = 0;
     //设置collectionView整体的上下左右之间的间距
-    self.sectionInset = UIEdgeInsetsMake(15, 20, 20, 20);
+    self.sectionInset = UIEdgeInsetsMake(15, 20, 10, 20);
     //设置滚动方向
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 100);
+    self.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 20);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

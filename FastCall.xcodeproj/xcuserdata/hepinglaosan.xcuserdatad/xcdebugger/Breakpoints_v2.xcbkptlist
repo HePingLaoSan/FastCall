@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FastCallExt/TodayViewController.m"
-            timestampString = "515495666.560907"
+            filePath = "FastCall/Controller/FCWidgetSettingViewController.m"
+            timestampString = "515502999.178564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-refreshData"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-refreshWidgetState"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

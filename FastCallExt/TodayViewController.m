@@ -36,31 +36,32 @@
     [super viewDidLoad];
     userDefault = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
     isInstalledExt = [userDefault objectForKey:@"isInstalledExt"];
-    _infoLabel.alpha = 0.0f;
-    
-    // Perform any setup necessary in order to update the view.
-    _infoLabel.alpha = 0.0f;
-    // If an error is encountered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
-    
-    if (isInstalledExt==nil) {
-        [userDefault setObject:@YES forKey:@"isInstalledExt"];
-        [userDefault synchronize];
-        //perform animation
-    }else{
-        //        [self refreshData];
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSparkAnimation];
-        [UIView animateWithDuration:3 animations:^{
-            _infoLabel.alpha = 1.0f;
-        }];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self stopSparkAnimation];
+    if (isInstalledExt == nil) {
+        // Perform any setup necessary in order to update the view.
+        _infoLabel.alpha = 0.0f;
+        // If an error is encountered, use NCUpdateResultFailed
+        // If there's no update required, use NCUpdateResultNoData
+        // If there's an update, use NCUpdateResultNewData
+        
+        if (isInstalledExt==nil) {
+            [userDefault setObject:@YES forKey:@"isInstalledExt"];
+            [userDefault synchronize];
+            //perform animation
+        }else{
+            //        [self refreshData];
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self performSparkAnimation];
+            [UIView animateWithDuration:3 animations:^{
+                _infoLabel.alpha = 1.0f;
+            }];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self stopSparkAnimation];
+            });
         });
-    });
-
+    }else{
+        [self refreshData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

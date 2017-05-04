@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     widgetSettingManager = [[FCWidgetSettingManager alloc]init];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewDidAppear:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWidgetState) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -34,32 +34,28 @@
             [self performSubTitleAnimation];
             [self.view layoutIfNeeded];
         }completion:^(BOOL finished) {
-            [UIView animateWithDuration:1.0f animations:^{
-                [self performIndicateImageViewAnimation];
-                [self.view layoutIfNeeded];
-            }completion:^(BOOL finished) {
-                //imageview开始播放动画
-                
-            }];
+            
+            if ([self currentWidgetState]) {
+                //您已添加widget 去设置联系人
+                UIStoryboard *storyboard = self.view.window.rootViewController.storyboard;
+                UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+                [self presentViewController:mainViewController animated:YES completion:^{
+                    self.view.window.rootViewController = mainViewController;
+                }];
+            }else{
+                [UIView animateWithDuration:1.0f animations:^{
+                    [self performIndicateImageViewAnimation];
+                    [self.view layoutIfNeeded];
+                }completion:^(BOOL finished) {
+                    //imageview开始播放动画
+                    
+                }];
+            }
+           
         }];
     }];
-    if ([FCWidgetSettingManager checkWidgetInstalled]) {
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            UIAlertController *alertC = [[UIAlertController alloc]init];
-            UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"设置成功" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-            }];
-            [alertC addAction:alertAction];
-            [self presentViewController:alertC animated:YES completion:^{
-                
-            }];
-            //您已添加widget 去设置联系人
-            UIStoryboard *storyboard = self.view.window.rootViewController.storyboard;
-            UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
-            
-        });
-    }
+    
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -105,4 +101,17 @@
     
 }
 
+-(BOOL)currentWidgetState{
+    return [FCWidgetSettingManager checkWidgetInstalled];
+}
+
+-(void)refreshWidgetState{
+    if ([self currentWidgetState]) {
+        UIStoryboard *storyboard = self.view.window.rootViewController.storyboard;
+        UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+        [self presentViewController:mainViewController animated:YES completion:^{
+            self.view.window.rootViewController = mainViewController;
+        }];
+    }
+}
 @end
