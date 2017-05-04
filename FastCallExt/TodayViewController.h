@@ -12,4 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *emptyInfoLabel;
+
+- (IBAction)clickToHost:(UIButton *)sender;
+
 @end

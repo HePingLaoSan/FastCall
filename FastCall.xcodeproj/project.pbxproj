@@ -17,6 +17,12 @@
 		402C23991EB30F7100DC793C /* FCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C23971EB30F7100DC793C /* FCDataManager.m */; };
 		402C239C1EB3231300DC793C /* FCSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C239B1EB3231300DC793C /* FCSettingViewController.m */; };
 		402C239F1EB346E200DC793C /* FCAddContactButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C239E1EB346E200DC793C /* FCAddContactButton.m */; };
+		404AEAE01EBB020A00868C7C /* Intro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 404AEADF1EBB020A00868C7C /* Intro.gif */; };
+		404AEAE31EBB025000868C7C /* FCGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 404AEAE21EBB025000868C7C /* FCGifImageView.m */; };
+		404AEAE51EBB052700868C7C /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404AEAE41EBB052700868C7C /* Bugly.framework */; };
+		404AEAE71EBB053B00868C7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404AEAE61EBB053B00868C7C /* SystemConfiguration.framework */; };
+		404AEAE91EBB054300868C7C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404AEAE81EBB054300868C7C /* Security.framework */; };
+		404AEAEB1EBB054C00868C7C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 404AEAEA1EBB054C00868C7C /* libz.tbd */; };
 		404F96C71DEBCC97006ECE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F96C61DEBCC97006ECE21 /* main.m */; };
 		404F96CA1DEBCC97006ECE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F96C91DEBCC97006ECE21 /* AppDelegate.m */; };
 		404F96CD1DEBCC97006ECE21 /* FCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F96CC1DEBCC97006ECE21 /* FCBaseViewController.m */; };
@@ -137,6 +143,13 @@
 		402C239B1EB3231300DC793C /* FCSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSettingViewController.m; sourceTree = "<group>"; };
 		402C239D1EB346E200DC793C /* FCAddContactButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAddContactButton.h; sourceTree = "<group>"; };
 		402C239E1EB346E200DC793C /* FCAddContactButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAddContactButton.m; sourceTree = "<group>"; };
+		404AEADF1EBB020A00868C7C /* Intro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Intro.gif; sourceTree = "<group>"; };
+		404AEAE11EBB025000868C7C /* FCGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGifImageView.h; sourceTree = "<group>"; };
+		404AEAE21EBB025000868C7C /* FCGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGifImageView.m; sourceTree = "<group>"; };
+		404AEAE41EBB052700868C7C /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		404AEAE61EBB053B00868C7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		404AEAE81EBB054300868C7C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		404AEAEA1EBB054C00868C7C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		404F96C21DEBCC97006ECE21 /* FastCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404F96C61DEBCC97006ECE21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		404F96C81DEBCC97006ECE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,12 +207,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404AEAEB1EBB054C00868C7C /* libz.tbd in Frameworks */,
+				404AEAE91EBB054300868C7C /* Security.framework in Frameworks */,
+				404AEAE71EBB053B00868C7C /* SystemConfiguration.framework in Frameworks */,
 				6BEF95D71EBACFFC00EDDD4B /* MessageUI.framework in Frameworks */,
 				404F97781DEC4838006ECE21 /* FCContactModel.framework in Frameworks */,
 				404F97241DEBFD8A006ECE21 /* Contacts.framework in Frameworks */,
 				404F97251DEBFD8A006ECE21 /* ContactsUI.framework in Frameworks */,
 				404F97541DEC2D0E006ECE21 /* FCContactModel.framework in Frameworks */,
 				404F971C1DEBD534006ECE21 /* AddressBook.framework in Frameworks */,
+				404AEAE51EBB052700868C7C /* Bugly.framework in Frameworks */,
 				404F971D1DEBD534006ECE21 /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +292,8 @@
 		404F96C41DEBCC97006ECE21 /* FastCall */ = {
 			isa = PBXGroup;
 			children = (
+				404AEAE41EBB052700868C7C /* Bugly.framework */,
+				404AEADF1EBB020A00868C7C /* Intro.gif */,
 				402C238B1EB2FDDC00DC793C /* Assets.xcassets */,
 				404F97361DEC201A006ECE21 /* FastCall.entitlements */,
 				404F97261DEC07EE006ECE21 /* Controller */,
@@ -323,6 +342,9 @@
 		404F97001DEBCE8D006ECE21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				404AEAEA1EBB054C00868C7C /* libz.tbd */,
+				404AEAE81EBB054300868C7C /* Security.framework */,
+				404AEAE61EBB053B00868C7C /* SystemConfiguration.framework */,
 				6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */,
 				404F97771DEC4838006ECE21 /* FCContactModel.framework */,
 				404F97221DEBFD8A006ECE21 /* Contacts.framework */,
@@ -394,6 +416,8 @@
 				402C238F1EB300D300DC793C /* FCCollectionView.m */,
 				402C239D1EB346E200DC793C /* FCAddContactButton.h */,
 				402C239E1EB346E200DC793C /* FCAddContactButton.m */,
+				404AEAE11EBB025000868C7C /* FCGifImageView.h */,
+				404AEAE21EBB025000868C7C /* FCGifImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -553,8 +577,7 @@
 				TargetAttributes = {
 					404F96C11DEBCC97006ECE21 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8R3Q6XY92M;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -575,8 +598,7 @@
 					};
 					404F96FE1DEBCE8D006ECE21 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8R3Q6XY92M;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -625,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404F96D81DEBCC97006ECE21 /* LaunchScreen.storyboard in Resources */,
+				404AEAE01EBB020A00868C7C /* Intro.gif in Resources */,
 				402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */,
 				404F96D01DEBCC97006ECE21 /* Main.storyboard in Resources */,
 			);
@@ -685,6 +708,7 @@
 				402C239C1EB3231300DC793C /* FCSettingViewController.m in Sources */,
 				6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */,
 				404F97841DEC4991006ECE21 /* ContactModel.m in Sources */,
+				404AEAE31EBB025000868C7C /* FCGifImageView.m in Sources */,
 				404F96C71DEBCC97006ECE21 /* main.m in Sources */,
 				404F97211DEBED52006ECE21 /* KTSContactsManager.m in Sources */,
 				404F97171DEBD3F9006ECE21 /* FCContactManager.m in Sources */,
@@ -895,15 +919,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FastCall/FastCall.entitlements;
-				DEVELOPMENT_TEAM = 8R3Q6XY92M;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FastCall",
 				);
 				INFOPLIST_FILE = FastCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -913,15 +939,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FastCall/FastCall.entitlements;
-				DEVELOPMENT_TEAM = 8R3Q6XY92M;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FastCall",
 				);
 				INFOPLIST_FILE = FastCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -981,7 +1009,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = FastCallExt/FastCallExt.entitlements;
-				DEVELOPMENT_TEAM = 8R3Q6XY92M;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -990,6 +1018,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall.KallExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -999,7 +1028,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = FastCallExt/FastCallExt.entitlements;
-				DEVELOPMENT_TEAM = 8R3Q6XY92M;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1008,6 +1037,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall.KallExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FCWidgetSettingManager.h"
+#import <Bugly/Bugly.h>
 
 #define iOS10Above ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #define iOS9Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
@@ -25,6 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Bugly startWithAppId:@"201f725687"];
+    
     if ([FCWidgetSettingManager checkWidgetInstalled]) {
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
         UIViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
@@ -110,6 +114,9 @@
 }
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    if ([url.absoluteString isEqualToString:@"FastCallExt://contact"]) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"kAddContactNoti" object:nil];
+    }
     
     return YES;
 }

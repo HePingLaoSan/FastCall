@@ -36,5 +36,5 @@
 
 -(void)fetchContactData;
 
--(void)showContactUI;
+-(void)showContactUIInView:(id)viewcontroller;
 @end

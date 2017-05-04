@@ -15,6 +15,7 @@
 #import "FCDataManager.h"
 #import "FCAddContactButton.h"
 
+
 @import FCContactModel;
 
 @interface FCBaseViewController ()<FCCollectionLayoutDelegate,FCContactManagerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>{
@@ -34,6 +35,7 @@
     FCCollectionLayout *layout = (FCCollectionLayout *)_myCollectionView.collectionViewLayout;
     layout.delegate = self;
     _myCollectionView.alwaysBounceVertical = YES;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addContactFromWidget) name:@"kAddContactNoti" object:nil];
 }
 
 #pragma mark - CollectionView Delegate & DataSources
@@ -132,7 +134,7 @@
     //perform some animation
     FCContactManager *manager = [FCContactManager sharedInstance];
     manager.delegate = self;
-    [manager showContactUI];
+    [manager showContactUIInView:self];
 }
 
 -(void)deleteItem:(UIButton *)deleteBtn event:(UIEvent *)event{
@@ -156,5 +158,10 @@
     }
 }
 
+-(void)addContactFromWidget{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self clickAddBtn:nil];
+    });
+}
 
 @end

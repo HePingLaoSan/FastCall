@@ -34,28 +34,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _emptyInfoLabel.hidden = YES;
     userDefault = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
     isInstalledExt = [userDefault objectForKey:@"isInstalledExt"];
     if (isInstalledExt == nil) {
-        // Perform any setup necessary in order to update the view.
         _infoLabel.alpha = 0.0f;
-        // If an error is encountered, use NCUpdateResultFailed
-        // If there's no update required, use NCUpdateResultNoData
-        // If there's an update, use NCUpdateResultNewData
-        
-        if (isInstalledExt==nil) {
-            [userDefault setObject:@YES forKey:@"isInstalledExt"];
-            [userDefault synchronize];
-            //perform animation
-        }else{
-            //        [self refreshData];
-        }
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [userDefault setObject:@YES forKey:@"isInstalledExt"];
+        [userDefault synchronize];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSparkAnimation];
-            [UIView animateWithDuration:3 animations:^{
+            [UIView animateWithDuration:1 animations:^{
                 _infoLabel.alpha = 1.0f;
             }];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self stopSparkAnimation];
             });
         });
@@ -70,7 +61,6 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    _infoLabel.alpha = 0.0f;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -79,12 +69,10 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    _infoLabel.alpha = 0.0f;
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    _infoLabel.alpha = 0.0f;
 }
 
 //- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
@@ -102,11 +90,17 @@
         dataSourcesArray = [contactsLocal mutableCopy];
     }
     [_myCollectionView reloadData];
+    if (dataSourcesArray.count==0) {
+        _emptyInfoLabel.hidden = NO;
+    }else{
+        _emptyInfoLabel.hidden = YES;
+    }
 }
 
 
 #pragma mark - UICollectionView Delegate
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
     return dataSourcesArray.count;
 }
 
@@ -120,10 +114,6 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (dataSourcesArray.count==0){
-        return;
-    }
-    if (indexPath.item == dataSourcesArray.count) {
-        [self.extensionContext openURL:[NSURL URLWithString:@"FastCallExt://"] completionHandler:nil];
         return;
     }
     ContactModel *model = dataSourcesArray[indexPath.row];
@@ -261,5 +251,9 @@
     [self.caELayer removeAllAnimations];
     [self.caELayer removeFromSuperlayer];
     self.caELayer = nil;
+}
+
+- (IBAction)clickToHost:(UIButton *)sender {
+    [self.extensionContext openURL:[NSURL URLWithString:@"FastCallExt://contact"] completionHandler:nil];
 }
 @end

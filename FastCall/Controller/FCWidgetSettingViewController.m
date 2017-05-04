@@ -22,6 +22,8 @@
     [super viewDidLoad];
     widgetSettingManager = [[FCWidgetSettingManager alloc]init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWidgetState) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [_indicateImageView configGif];
+    [_indicateImageView stopAnimating];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -48,7 +50,7 @@
                     [self.view layoutIfNeeded];
                 }completion:^(BOOL finished) {
                     //imageview开始播放动画
-                    
+                    [_indicateImageView startAnimating];
                 }];
             }
            

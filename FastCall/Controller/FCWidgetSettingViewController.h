@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FCGifImageView.h"
 
 @interface FCWidgetSettingViewController : UIViewController
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopConstraint;
@@ -16,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewTopConstraint;
-@property (weak, nonatomic) IBOutlet UIImageView *indicateImageView;
+@property (weak, nonatomic) IBOutlet FCGifImageView *indicateImageView;
 
 
 @end

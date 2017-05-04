@@ -41,27 +41,28 @@ static FCContactManager *contactManager = nil;
     
 }
 
--(void)showContactUI{
-//    if (!authorizationState)return;
+-(void)showContactUIInView:(id)viewcontroller{
+    
+    if (viewcontroller == nil) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        if (!window)
+        {
+            window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+        }
+        viewcontroller = window.rootViewController;
+        
+    }
     
     if (iOS9Above) {
         CNContactPickerViewController *vc = [[CNContactPickerViewController alloc]init];
         vc.delegate = self;
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        if (!window)
-        {
-            window = [[UIApplication sharedApplication].windows objectAtIndex:0];
-        }
-        [window.rootViewController presentViewController:vc animated:YES completion:nil];
+
+        [viewcontroller presentViewController:vc animated:YES completion:nil];
     }else{
         ABPeoplePickerNavigationController * vc = [[ABPeoplePickerNavigationController alloc] init];
         vc.peoplePickerDelegate = self;
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        if (!window)
-        {
-            window = [[UIApplication sharedApplication].windows objectAtIndex:0];
-        }
-        [window.rootViewController presentViewController:vc animated:YES completion:nil];
+
+        [viewcontroller presentViewController:vc animated:YES completion:nil];
         
     }
 }
