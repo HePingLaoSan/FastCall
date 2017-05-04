@@ -48,8 +48,6 @@
 		404F97481DEC2D0E006ECE21 /* FCContactModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404F973F1DEC2D0D006ECE21 /* FCContactModel.framework */; };
 		404F974F1DEC2D0E006ECE21 /* FCContactModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F974E1DEC2D0E006ECE21 /* FCContactModelTests.m */; };
 		404F97511DEC2D0E006ECE21 /* FCContactModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 404F97411DEC2D0D006ECE21 /* FCContactModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		404F97541DEC2D0E006ECE21 /* FCContactModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404F973F1DEC2D0D006ECE21 /* FCContactModel.framework */; };
-		404F97551DEC2D0E006ECE21 /* FCContactModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 404F973F1DEC2D0D006ECE21 /* FCContactModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		404F97781DEC4838006ECE21 /* FCContactModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404F97771DEC4838006ECE21 /* FCContactModel.framework */; };
 		404F97791DEC4838006ECE21 /* FCContactModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404F97771DEC4838006ECE21 /* FCContactModel.framework */; };
 		404F97841DEC4991006ECE21 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F97831DEC4991006ECE21 /* ContactModel.m */; };
@@ -97,13 +95,6 @@
 			remoteGlobalIDString = 404F96C11DEBCC97006ECE21;
 			remoteInfo = FastCall;
 		};
-		404F97521DEC2D0E006ECE21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 404F96BA1DEBCC97006ECE21 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 404F973E1DEC2D0D006ECE21;
-			remoteInfo = FCContactModel;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,17 +107,6 @@
 				404F970D1DEBCE8D006ECE21 /* FastCallExt.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		404F97591DEC2D0E006ECE21 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				404F97551DEC2D0E006ECE21 /* FCContactModel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -214,7 +194,6 @@
 				404F97781DEC4838006ECE21 /* FCContactModel.framework in Frameworks */,
 				404F97241DEBFD8A006ECE21 /* Contacts.framework in Frameworks */,
 				404F97251DEBFD8A006ECE21 /* ContactsUI.framework in Frameworks */,
-				404F97541DEC2D0E006ECE21 /* FCContactModel.framework in Frameworks */,
 				404F971C1DEBD534006ECE21 /* AddressBook.framework in Frameworks */,
 				404AEAE51EBB052700868C7C /* Bugly.framework in Frameworks */,
 				404F971D1DEBD534006ECE21 /* AddressBookUI.framework in Frameworks */,
@@ -463,13 +442,11 @@
 				404F96BF1DEBCC97006ECE21 /* Frameworks */,
 				404F96C01DEBCC97006ECE21 /* Resources */,
 				404F97111DEBCE8D006ECE21 /* Embed App Extensions */,
-				404F97591DEC2D0E006ECE21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				404F970C1DEBCE8D006ECE21 /* PBXTargetDependency */,
-				404F97531DEC2D0E006ECE21 /* PBXTargetDependency */,
 			);
 			name = FastCall;
 			productName = FastCall;
@@ -577,6 +554,7 @@
 				TargetAttributes = {
 					404F96C11DEBCC97006ECE21 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8R3Q6XY92M;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -598,6 +576,7 @@
 					};
 					404F96FE1DEBCE8D006ECE21 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8R3Q6XY92M;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -791,11 +770,6 @@
 			target = 404F96C11DEBCC97006ECE21 /* FastCall */;
 			targetProxy = 404F974B1DEC2D0E006ECE21 /* PBXContainerItemProxy */;
 		};
-		404F97531DEC2D0E006ECE21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 404F973E1DEC2D0D006ECE21 /* FCContactModel */;
-			targetProxy = 404F97521DEC2D0E006ECE21 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -919,18 +893,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FastCall/FastCall.entitlements;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FastCall",
 				);
 				INFOPLIST_FILE = FastCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "d659a59a-286e-4de0-baca-5d415dd129af";
+				PROVISIONING_PROFILE_SPECIFIER = Kall_Dis;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -939,18 +916,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FastCall/FastCall.entitlements;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FastCall",
 				);
 				INFOPLIST_FILE = FastCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "d659a59a-286e-4de0-baca-5d415dd129af";
+				PROVISIONING_PROFILE_SPECIFIER = Kall_Dis;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1009,7 +989,8 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = FastCallExt/FastCallExt.entitlements;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1018,7 +999,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall.KallExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1fe61bb6-59b7-4561-996c-b68b222f14c9";
+				PROVISIONING_PROFILE_SPECIFIER = KallExt_Dis;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1028,7 +1010,8 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = FastCallExt/FastCallExt.entitlements;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1037,7 +1020,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall.KallExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1fe61bb6-59b7-4561-996c-b68b222f14c9";
+				PROVISIONING_PROFILE_SPECIFIER = KallExt_Dis;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
