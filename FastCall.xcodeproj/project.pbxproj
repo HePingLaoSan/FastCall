@@ -54,6 +54,11 @@
 		404F97851DEC4991006ECE21 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F97831DEC4991006ECE21 /* ContactModel.m */; };
 		404F97861DEC49BC006ECE21 /* ContactModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 404F97821DEC4991006ECE21 /* ContactModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		404F97871DEC49C5006ECE21 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 404F97831DEC4991006ECE21 /* ContactModel.m */; };
+		406B82AA1EBC25CE0014314F /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 406B82A91EBC25CE0014314F /* RKDropdownAlert.m */; };
+		406B82AC1EBC4A200014314F /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406B82AB1EBC4A200014314F /* UMMobClick.framework */; };
+		406B82AE1EBC4A470014314F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406B82AD1EBC4A470014314F /* CoreTelephony.framework */; };
+		406B82B11EBC4A600014314F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406B82AF1EBC4A600014314F /* libsqlite3.0.tbd */; };
+		406B82B21EBC4A600014314F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406B82B01EBC4A600014314F /* libsqlite3.tbd */; };
 		6BC67BAD1EB99CD600816ABE /* FCWidgetSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */; };
 		6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */; };
 		6BEF95D71EBACFFC00EDDD4B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */; };
@@ -175,6 +180,12 @@
 		404F97771DEC4838006ECE21 /* FCContactModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FCContactModel.framework; sourceTree = "<group>"; };
 		404F97821DEC4991006ECE21 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
 		404F97831DEC4991006ECE21 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		406B82A81EBC25CE0014314F /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
+		406B82A91EBC25CE0014314F /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
+		406B82AB1EBC4A200014314F /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		406B82AD1EBC4A470014314F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		406B82AF1EBC4A600014314F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		406B82B01EBC4A600014314F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6BC67BAB1EB99CD600816ABE /* FCWidgetSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWidgetSettingViewController.h; sourceTree = "<group>"; };
 		6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWidgetSettingViewController.m; sourceTree = "<group>"; };
 		6BC67BAE1EB9ABB300816ABE /* FCWidgetSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWidgetSettingManager.h; sourceTree = "<group>"; };
@@ -187,6 +198,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406B82B11EBC4A600014314F /* libsqlite3.0.tbd in Frameworks */,
+				406B82B21EBC4A600014314F /* libsqlite3.tbd in Frameworks */,
+				406B82AE1EBC4A470014314F /* CoreTelephony.framework in Frameworks */,
 				404AEAEB1EBB054C00868C7C /* libz.tbd in Frameworks */,
 				404AEAE91EBB054300868C7C /* Security.framework in Frameworks */,
 				404AEAE71EBB053B00868C7C /* SystemConfiguration.framework in Frameworks */,
@@ -194,6 +208,7 @@
 				404F97781DEC4838006ECE21 /* FCContactModel.framework in Frameworks */,
 				404F97241DEBFD8A006ECE21 /* Contacts.framework in Frameworks */,
 				404F97251DEBFD8A006ECE21 /* ContactsUI.framework in Frameworks */,
+				406B82AC1EBC4A200014314F /* UMMobClick.framework in Frameworks */,
 				404F971C1DEBD534006ECE21 /* AddressBook.framework in Frameworks */,
 				404AEAE51EBB052700868C7C /* Bugly.framework in Frameworks */,
 				404F971D1DEBD534006ECE21 /* AddressBookUI.framework in Frameworks */,
@@ -271,6 +286,9 @@
 		404F96C41DEBCC97006ECE21 /* FastCall */ = {
 			isa = PBXGroup;
 			children = (
+				406B82AB1EBC4A200014314F /* UMMobClick.framework */,
+				406B82A81EBC25CE0014314F /* RKDropdownAlert.h */,
+				406B82A91EBC25CE0014314F /* RKDropdownAlert.m */,
 				404AEAE41EBB052700868C7C /* Bugly.framework */,
 				404AEADF1EBB020A00868C7C /* Intro.gif */,
 				402C238B1EB2FDDC00DC793C /* Assets.xcassets */,
@@ -321,6 +339,9 @@
 		404F97001DEBCE8D006ECE21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				406B82AF1EBC4A600014314F /* libsqlite3.0.tbd */,
+				406B82B01EBC4A600014314F /* libsqlite3.tbd */,
+				406B82AD1EBC4A470014314F /* CoreTelephony.framework */,
 				404AEAEA1EBB054C00868C7C /* libz.tbd */,
 				404AEAE81EBB054300868C7C /* Security.framework */,
 				404AEAE61EBB053B00868C7C /* SystemConfiguration.framework */,
@@ -555,7 +576,7 @@
 					404F96C11DEBCC97006ECE21 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8R3Q6XY92M;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -577,7 +598,7 @@
 					404F96FE1DEBCE8D006ECE21 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8R3Q6XY92M;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -690,6 +711,7 @@
 				404AEAE31EBB025000868C7C /* FCGifImageView.m in Sources */,
 				404F96C71DEBCC97006ECE21 /* main.m in Sources */,
 				404F97211DEBED52006ECE21 /* KTSContactsManager.m in Sources */,
+				406B82AA1EBC25CE0014314F /* RKDropdownAlert.m in Sources */,
 				404F97171DEBD3F9006ECE21 /* FCContactManager.m in Sources */,
 				404F96D31DEBCC97006ECE21 /* FastCall.xcdatamodeld in Sources */,
 				404F972F1DEC0D13006ECE21 /* AddContactCell.m in Sources */,
@@ -893,7 +915,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FastCall/FastCall.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -905,8 +927,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d659a59a-286e-4de0-baca-5d415dd129af";
-				PROVISIONING_PROFILE_SPECIFIER = Kall_Dis;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -916,7 +938,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FastCall/FastCall.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -928,8 +950,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d659a59a-286e-4de0-baca-5d415dd129af";
-				PROVISIONING_PROFILE_SPECIFIER = Kall_Dis;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -989,7 +1011,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = FastCallExt/FastCallExt.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -999,8 +1021,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall.KallExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1fe61bb6-59b7-4561-996c-b68b222f14c9";
-				PROVISIONING_PROFILE_SPECIFIER = KallExt_Dis;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1010,7 +1032,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = FastCallExt/FastCallExt.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8R3Q6XY92M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1020,8 +1042,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hepinglaosan.Kall.KallExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1fe61bb6-59b7-4561-996c-b68b222f14c9";
-				PROVISIONING_PROFILE_SPECIFIER = KallExt_Dis;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

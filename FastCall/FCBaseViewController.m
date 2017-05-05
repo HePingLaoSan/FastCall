@@ -14,7 +14,7 @@
 #import "FCCollectionLayout.h"
 #import "FCDataManager.h"
 #import "FCAddContactButton.h"
-
+#import "RKDropdownAlert.h"
 
 @import FCContactModel;
 
@@ -72,6 +72,12 @@
 }
 -(void)didSelectContact:(ContactModel *)contactModel{
 
+    if ([dataManager isFirstTimeAddingContact]) {
+        
+        [dataManager completeAddingGuide];
+        [RKDropdownAlert title:@"成功添加" message:@"长按联系人进行删除、排序" backgroundColor:nil textColor:nil time:20];
+    }
+    
     NSUInteger index = [dataManager.dataSourcesArray indexOfObjectPassingTest:^BOOL(ContactModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj.contact_id isEqualToString:contactModel.contact_id]) {
             return YES;

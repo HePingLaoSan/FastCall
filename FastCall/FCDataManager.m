@@ -52,4 +52,16 @@
     [self saveToDisk];
 }
 
+-(BOOL)isFirstTimeAddingContact{
+    NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
+    NSNumber *isFirstTimeAddingContact = [userDef objectForKey:@"isFirstTimeAddingContact"];
+    return [isFirstTimeAddingContact boolValue];
+}
+
+-(void)completeAddingGuide{
+    NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
+    [userDef setObject:@YES forKey:@"isFirstTimeAddingContact"];
+    [userDef synchronize];
+}
+
 @end

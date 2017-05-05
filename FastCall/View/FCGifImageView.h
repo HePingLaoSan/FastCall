@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface FCGifImageView : UIImageView
+{
+    NSMutableArray *currentImagesArray;
+}
+
 
 -(void)configGif;
+
+-(void)startPlayImages;
+
+-(void)stopPlayingImages;
 
 @end

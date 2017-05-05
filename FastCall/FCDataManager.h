@@ -20,4 +20,10 @@
 
 -(void)moveItemFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
+
+-(BOOL)isFirstTimeAddingContact;
+
+
+-(void)completeAddingGuide;
+
 @end

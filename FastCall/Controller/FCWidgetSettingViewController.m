@@ -23,7 +23,7 @@
     widgetSettingManager = [[FCWidgetSettingManager alloc]init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWidgetState) name:UIApplicationDidBecomeActiveNotification object:nil];
     [_indicateImageView configGif];
-    [_indicateImageView stopAnimating];
+    [_indicateImageView stopPlayingImages];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -45,12 +45,12 @@
                     self.view.window.rootViewController = mainViewController;
                 }];
             }else{
-                [UIView animateWithDuration:1.0f animations:^{
+                [UIView animateWithDuration:0.2f animations:^{
                     [self performIndicateImageViewAnimation];
                     [self.view layoutIfNeeded];
                 }completion:^(BOOL finished) {
                     //imageview开始播放动画
-                    [_indicateImageView startAnimating];
+                    [_indicateImageView startPlayImages];
                 }];
             }
            
