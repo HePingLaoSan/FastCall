@@ -66,7 +66,7 @@ static NSString * const cellIdentifier = @"cellIdentifier";
     if ([selectedString isEqualToString:@"意见反馈"]) {
         [self feedBack];
     }else{
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"关于" message:@"嘿嘿" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"关于" message:@"如果您觉得还不错，欢迎好评！" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
         [alertView show];
     }
 }

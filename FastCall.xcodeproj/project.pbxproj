@@ -17,7 +17,6 @@
 		402C23991EB30F7100DC793C /* FCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C23971EB30F7100DC793C /* FCDataManager.m */; };
 		402C239C1EB3231300DC793C /* FCSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C239B1EB3231300DC793C /* FCSettingViewController.m */; };
 		402C239F1EB346E200DC793C /* FCAddContactButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C239E1EB346E200DC793C /* FCAddContactButton.m */; };
-		404AEAE01EBB020A00868C7C /* Intro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 404AEADF1EBB020A00868C7C /* Intro.gif */; };
 		404AEAE31EBB025000868C7C /* FCGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 404AEAE21EBB025000868C7C /* FCGifImageView.m */; };
 		404AEAE51EBB052700868C7C /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404AEAE41EBB052700868C7C /* Bugly.framework */; };
 		404AEAE71EBB053B00868C7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404AEAE61EBB053B00868C7C /* SystemConfiguration.framework */; };
@@ -128,7 +127,6 @@
 		402C239B1EB3231300DC793C /* FCSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSettingViewController.m; sourceTree = "<group>"; };
 		402C239D1EB346E200DC793C /* FCAddContactButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAddContactButton.h; sourceTree = "<group>"; };
 		402C239E1EB346E200DC793C /* FCAddContactButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAddContactButton.m; sourceTree = "<group>"; };
-		404AEADF1EBB020A00868C7C /* Intro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Intro.gif; sourceTree = "<group>"; };
 		404AEAE11EBB025000868C7C /* FCGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGifImageView.h; sourceTree = "<group>"; };
 		404AEAE21EBB025000868C7C /* FCGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGifImageView.m; sourceTree = "<group>"; };
 		404AEAE41EBB052700868C7C /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				406B82A81EBC25CE0014314F /* RKDropdownAlert.h */,
 				406B82A91EBC25CE0014314F /* RKDropdownAlert.m */,
 				404AEAE41EBB052700868C7C /* Bugly.framework */,
-				404AEADF1EBB020A00868C7C /* Intro.gif */,
 				402C238B1EB2FDDC00DC793C /* Assets.xcassets */,
 				404F97361DEC201A006ECE21 /* FastCall.entitlements */,
 				404F97261DEC07EE006ECE21 /* Controller */,
@@ -647,7 +644,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				404F96D81DEBCC97006ECE21 /* LaunchScreen.storyboard in Resources */,
-				404AEAE01EBB020A00868C7C /* Intro.gif in Resources */,
 				402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */,
 				404F96D01DEBCC97006ECE21 /* Main.storyboard in Resources */,
 			);

@@ -18,21 +18,18 @@ static NSTimer *timer = nil;
 -(void)configGif{
     currentImagesArray = [NSMutableArray array];
     self.contentMode = UIViewContentModeScaleAspectFit;
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"Intro" withExtension:@"gif"];//加载GIF图片
-    CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef)fileUrl, NULL);//将GIF图片转换成对应的图片源
-    size_t frameCout=CGImageSourceGetCount(gifSource);//获取其中图片源个数，即由多少帧图片组成
-    for (size_t i=0; i < frameCout; i++){
-        CGImageRef imageRef=CGImageSourceCreateImageAtIndex(gifSource, i, NULL);//从GIF图片中取出源图片
-        UIImage* imageName=[UIImage imageWithCGImage:imageRef];//将图片源转换成UIimageView能使用的图片源
-        [currentImagesArray addObject:imageName];//将图片加入数组中
-        CGImageRelease(imageRef);
+    
+    for (int i=0; i < 5; i++){
+        NSString *imageName = [NSString stringWithFormat:@"intro_%d",i+1];
+        UIImage *image = [UIImage imageNamed:imageName];
+        [currentImagesArray addObject:image];//将图片加入数组中
     }
     self.image = [currentImagesArray firstObject];
 }
 
 -(void)startPlayImages{
     if (timer == nil) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
     }
     [timer fire];
 }

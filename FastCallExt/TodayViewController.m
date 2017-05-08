@@ -11,7 +11,7 @@
 #import "AddContactCell.h"
 #import <FCContactModel/FCContactModel.h>
 #import "FastCallCell.h"
-
+#import <objc/runtime.h>
 
 @interface TodayViewController () <NCWidgetProviding,UICollectionViewDelegate,UICollectionViewDataSource>
 {
@@ -34,6 +34,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *systemV = [[UIDevice currentDevice]systemVersion];
+    
+
+
     _emptyInfoLabel.hidden = YES;
     userDefault = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
     isInstalledExt = [userDefault objectForKey:@"isInstalledExt"];
@@ -53,6 +57,41 @@
     }else{
         [self refreshData];
     }
+    if ([systemV floatValue]>=10) {
+        self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+        
+    }else{
+        self.preferredContentSize = _myCollectionView.contentSize;
+    }
+    
+//    NSMutableArray *keys = [[NSMutableArray alloc] init];
+//    u_int propertyListCount = 0;
+//    objc_property_t *allProperties = class_copyPropertyList([self.extensionContext class], &propertyListCount);
+//    for (int i = 0; i < propertyListCount; i++) {
+//        objc_property_t eachProperty = allProperties[i];
+//        const char *propertyCString = property_getName(eachProperty);
+//        NSString *propertyName = [NSString stringWithCString:propertyCString encoding:NSUTF8StringEncoding];
+//        [keys addObject:propertyName];
+//    }
+//    free(allProperties);
+//    
+//
+//        unsigned int count = 0;
+//        //拷贝出所有的成员变量的列表
+//        Ivar *ivars =class_copyIvarList([self.extensionContext class], &count);
+//        for (int i =0; i<count; i++) {
+//            //取出成员变量
+//            Ivar var = *(ivars + i);
+//            
+//            //打印成员变量名字
+//            NSLog(@"%s",ivar_getName(var));
+//        }
+//        
+//        //释放
+//        free(ivars);
+//    [self.extensionContext setValue:@50 forKey:@"_maxCompactSize"];
+//    [self.extensionContext setValue:@50 forKey:@"_maxExpandedSize"];
+//
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,6 +112,14 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+}
+
+-(void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize{
+    if (activeDisplayMode == NCWidgetDisplayModeExpanded) {
+        self.preferredContentSize = _myCollectionView.contentSize;
+    }else{
+        self.preferredContentSize = CGSizeMake(CGRectGetWidth( _myCollectionView.frame), 100);
+    }
 }
 
 //- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
