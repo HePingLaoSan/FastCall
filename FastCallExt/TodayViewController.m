@@ -18,10 +18,12 @@
     NSMutableArray *dataSourcesArray;
     NSNumber *isInstalledExt;
     NSUserDefaults *userDefault;
+    CGSize minimumSize;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
 @property (nonatomic, strong) CAEmitterLayer *caELayer;
 @end
+
 
 @implementation TodayViewController
 
@@ -31,14 +33,8 @@
     _infoLabel.alpha = 0.0f;
 
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)update{
     NSString *systemV = [[UIDevice currentDevice]systemVersion];
-    
-
-
-    _emptyInfoLabel.hidden = YES;
     userDefault = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
     isInstalledExt = [userDefault objectForKey:@"isInstalledExt"];
     if (isInstalledExt == nil) {
@@ -61,37 +57,42 @@
         self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
         
     }else{
-        self.preferredContentSize = _myCollectionView.contentSize;
+        if (_myCollectionView.contentSize.height < minimumSize.height) {
+            self.preferredContentSize = minimumSize;
+        }else{
+            self.preferredContentSize = _myCollectionView.contentSize;
+        }
     }
+
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-//    NSMutableArray *keys = [[NSMutableArray alloc] init];
-//    u_int propertyListCount = 0;
-//    objc_property_t *allProperties = class_copyPropertyList([self.extensionContext class], &propertyListCount);
-//    for (int i = 0; i < propertyListCount; i++) {
-//        objc_property_t eachProperty = allProperties[i];
-//        const char *propertyCString = property_getName(eachProperty);
-//        NSString *propertyName = [NSString stringWithCString:propertyCString encoding:NSUTF8StringEncoding];
-//        [keys addObject:propertyName];
-//    }
-//    free(allProperties);
+    minimumSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 100);
+
+    _emptyInfoLabel.hidden = YES;
+    
+    [self update];
+   
+}
+
+//-(void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler{
+//
 //    
-//
-//        unsigned int count = 0;
-//        //拷贝出所有的成员变量的列表
-//        Ivar *ivars =class_copyIvarList([self.extensionContext class], &count);
-//        for (int i =0; i<count; i++) {
-//            //取出成员变量
-//            Ivar var = *(ivars + i);
-//            
-//            //打印成员变量名字
-//            NSLog(@"%s",ivar_getName(var));
-//        }
-//        
-//        //释放
-//        free(ivars);
-//    [self.extensionContext setValue:@50 forKey:@"_maxCompactSize"];
-//    [self.extensionContext setValue:@50 forKey:@"_maxExpandedSize"];
-//
+//    
+//    completionHandler(NCUpdateResultNewData);
+//}
+
+/**
+ *  该方法是用来设置Today Extension的偏移，默认会像左偏移
+ *
+ *  @param defaultMarginInsets UIEdgeInsets
+ *
+ *  @return UIEdgeInsets
+ */
+- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
+    
+    return UIEdgeInsetsZero;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +101,10 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSString *systemV = [[UIDevice currentDevice]systemVersion];
+    if ([systemV floatValue]<=10) {
+        [self update];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -116,7 +121,11 @@
 
 -(void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize{
     if (activeDisplayMode == NCWidgetDisplayModeExpanded) {
-        self.preferredContentSize = _myCollectionView.contentSize;
+        if (_myCollectionView.contentSize.height < minimumSize.height) {
+            self.preferredContentSize = minimumSize;
+        }else{
+            self.preferredContentSize = _myCollectionView.contentSize;
+        }
     }else{
         self.preferredContentSize = CGSizeMake(CGRectGetWidth( _myCollectionView.frame), 100);
     }
@@ -157,6 +166,13 @@
     UIImage *image = [UIImage imageWithData:model.contact_thumbnail];
     cell.callImageView.image = image;
     cell.contactName.text = model.contact_name;
+    
+    NSString *systemV = [[UIDevice currentDevice]systemVersion];
+    if ([systemV floatValue]<=10) {
+        cell.contactName.textColor = [UIColor colorWithWhite:255 alpha:0.6];
+        cell.callImageView.layer.borderColor = [[UIColor colorWithWhite:255 alpha:0.6]CGColor];
+        cell.callImageView.layer.backgroundColor = [[UIColor colorWithWhite:255 alpha:0.6]CGColor];
+    }
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

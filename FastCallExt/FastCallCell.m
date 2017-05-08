@@ -50,6 +50,7 @@
         }
     }else{
         _deleteBtn.alpha = 0.0f;
+        [self resume:self];
     }
 }
 - (void)shakeImage:(FastCallCell *)cell {
@@ -87,6 +88,7 @@
 - (void)resume:(FastCallCell *)cell {
     
     _callImageView.layer.speed = 1.0;
+    [_callImageView.layer removeAnimationForKey:@"rotation"];
     
 }
 @end
