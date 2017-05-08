@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet FCAddContactButton *addContactBtn;
 @property (weak, nonatomic) IBOutlet UILabel *emptyInfoLabel;
 
-- (IBAction)clickAddBtn:(id)sender;
+- (void)clickAddBtn:(UIViewController *)presentedVC;
 
 @end
 

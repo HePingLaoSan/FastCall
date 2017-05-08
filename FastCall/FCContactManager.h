@@ -17,9 +17,9 @@
 @protocol FCContactManagerDelegate <NSObject>
 
 @optional
--(void)didSelectContact:(ContactModel *)contactModel;
+-(void)viewController:(UIViewController *)hostViewController didSelectContact:(ContactModel *)contactModel;
 
--(void)didCloseContactController;
+-(void)didCloseContactController:(UIViewController *)hostViewController;
 
 @end
 

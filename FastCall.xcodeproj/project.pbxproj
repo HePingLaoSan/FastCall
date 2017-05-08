@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402AF7351EC05EDD0005ED82 /* FCContactChoosenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */; };
+		402AF7381EC0640F0005ED82 /* showSelectionContactSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7371EC0640F0005ED82 /* showSelectionContactSegue.m */; };
 		402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402C238B1EB2FDDC00DC793C /* Assets.xcassets */; };
 		402C238D1EB2FDDC00DC793C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402C238B1EB2FDDC00DC793C /* Assets.xcassets */; };
 		402C23901EB300D300DC793C /* FCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C238F1EB300D300DC793C /* FCCollectionView.m */; };
@@ -116,6 +118,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		402AF7331EC05EDD0005ED82 /* FCContactChoosenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactChoosenViewController.h; sourceTree = "<group>"; };
+		402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactChoosenViewController.m; sourceTree = "<group>"; };
+		402AF7361EC0640F0005ED82 /* showSelectionContactSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showSelectionContactSegue.h; sourceTree = "<group>"; };
+		402AF7371EC0640F0005ED82 /* showSelectionContactSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showSelectionContactSegue.m; sourceTree = "<group>"; };
 		402C238B1EB2FDDC00DC793C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		402C238E1EB300D300DC793C /* FCCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCollectionView.h; sourceTree = "<group>"; };
 		402C238F1EB300D300DC793C /* FCCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCollectionView.m; sourceTree = "<group>"; };
@@ -389,6 +395,8 @@
 				402C239B1EB3231300DC793C /* FCSettingViewController.m */,
 				6BC67BAB1EB99CD600816ABE /* FCWidgetSettingViewController.h */,
 				6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */,
+				402AF7331EC05EDD0005ED82 /* FCContactChoosenViewController.h */,
+				402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -415,6 +423,8 @@
 				402C239E1EB346E200DC793C /* FCAddContactButton.m */,
 				404AEAE11EBB025000868C7C /* FCGifImageView.h */,
 				404AEAE21EBB025000868C7C /* FCGifImageView.m */,
+				402AF7361EC0640F0005ED82 /* showSelectionContactSegue.h */,
+				402AF7371EC0640F0005ED82 /* showSelectionContactSegue.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -701,6 +711,7 @@
 				402C23981EB30F7100DC793C /* FCDataManager.m in Sources */,
 				402C239F1EB346E200DC793C /* FCAddContactButton.m in Sources */,
 				402C23941EB300F300DC793C /* FCCollectionLayout.m in Sources */,
+				402AF7381EC0640F0005ED82 /* showSelectionContactSegue.m in Sources */,
 				402C239C1EB3231300DC793C /* FCSettingViewController.m in Sources */,
 				6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */,
 				404F97841DEC4991006ECE21 /* ContactModel.m in Sources */,
@@ -709,6 +720,7 @@
 				404F97211DEBED52006ECE21 /* KTSContactsManager.m in Sources */,
 				406B82AA1EBC25CE0014314F /* RKDropdownAlert.m in Sources */,
 				404F97171DEBD3F9006ECE21 /* FCContactManager.m in Sources */,
+				402AF7351EC05EDD0005ED82 /* FCContactChoosenViewController.m in Sources */,
 				404F96D31DEBCC97006ECE21 /* FastCall.xcdatamodeld in Sources */,
 				404F972F1DEC0D13006ECE21 /* AddContactCell.m in Sources */,
 			);

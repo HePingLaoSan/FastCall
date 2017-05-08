@@ -16,7 +16,9 @@
 #define iOS8Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define iOS7Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define iOS6Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
-@implementation FCContactManager
+@implementation FCContactManager{
+    UIViewController *hostViewController;
+}
 
 static FCContactManager *contactManager = nil;
 
@@ -52,12 +54,13 @@ static FCContactManager *contactManager = nil;
         viewcontroller = window.rootViewController;
         
     }
-    
+    hostViewController = viewcontroller;
     if (iOS9Above) {
         CNContactPickerViewController *vc = [[CNContactPickerViewController alloc]init];
         vc.delegate = self;
 
         [viewcontroller presentViewController:vc animated:YES completion:nil];
+        
     }else{
         ABPeoplePickerNavigationController * vc = [[ABPeoplePickerNavigationController alloc] init];
         vc.peoplePickerDelegate = self;
@@ -76,14 +79,14 @@ static FCContactManager *contactManager = nil;
 }
 // Called after the user has pressed cancel.
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
-    if ([_delegate respondsToSelector:@selector(didCloseContactController)]) {
-        [_delegate didCloseContactController];
+    if ([_delegate respondsToSelector:@selector(didCloseContactController:)]) {
+        [_delegate didCloseContactController:hostViewController];
     }
 }
 
 - (void)contactPickerDidCancel:(CNContactPickerViewController *)picker{
-    if ([_delegate respondsToSelector:@selector(didCloseContactController)]) {
-        [_delegate didCloseContactController];
+    if ([_delegate respondsToSelector:@selector(didCloseContactController:)]) {
+        [_delegate didCloseContactController:hostViewController];
     }
 }
 -(void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact{
@@ -106,8 +109,8 @@ static FCContactManager *contactManager = nil;
             break;
         }
     }
-    if ([_delegate respondsToSelector:@selector(didSelectContact:)]) {
-        [_delegate didSelectContact:model];
+    if ([_delegate respondsToSelector:@selector(viewController:didSelectContact:)]) {
+        [_delegate viewController:hostViewController didSelectContact:model];
     }
 }
 

@@ -10,9 +10,6 @@
 
 @implementation FCAddContactButton
 
-
-
-
 -(void)startAnimation{
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];

@@ -65,13 +65,20 @@
 }
 
 #pragma mark - FCContactManagerDelegate
--(void)didCloseContactController{
+-(void)didCloseContactController:(UIViewController *)hostViewController{
+    hostViewController.view.hidden = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hostViewController dismissViewControllerAnimated:NO completion:nil];
+    });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_addContactBtn resetAnimation];
     });
 }
--(void)didSelectContact:(ContactModel *)contactModel{
-
+-(void)viewController:(UIViewController *)hostViewController didSelectContact:(ContactModel *)contactModel{
+    hostViewController.view.hidden = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hostViewController dismissViewControllerAnimated:NO completion:nil];
+    });
     if ([dataManager isFirstTimeAddingContact]) {
         
         [dataManager completeAddingGuide];
@@ -135,12 +142,12 @@
 }
 
 
-- (IBAction)clickAddBtn:(id)sender {
+- (void)clickAddBtn:(UIViewController *)presentedVC {
     [_addContactBtn startAnimation];
     //perform some animation
     FCContactManager *manager = [FCContactManager sharedInstance];
     manager.delegate = self;
-    [manager showContactUIInView:self];
+    [manager showContactUIInView:presentedVC];
 }
 
 -(void)deleteItem:(UIButton *)deleteBtn event:(UIEvent *)event{

@@ -182,7 +182,7 @@
                                         </constraints>
                                         <state key="normal" image="plus"/>
                                         <connections>
-                                            <action selector="clickAddBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NBi-FY-tFe"/>
+                                            <segue destination="MAE-Uf-tzA" kind="custom" identifier="showSelectionContact" customClass="showSelectionContactSegue" id="Ajo-Fe-Owp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-8E-gJZ">
@@ -297,10 +297,129 @@
             </objects>
             <point key="canvasLocation" x="276.81159420289856" y="19.565217391304348"/>
         </scene>
+        <!--Contact Choosen View Controller-->
+        <scene sceneID="n0c-zo-wbN">
+            <objects>
+                <viewController id="MAE-Uf-tzA" customClass="FCContactChoosenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bfx-Uu-xQY"/>
+                        <viewControllerLayoutGuide type="bottom" id="VgR-hh-YI8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="auU-VD-jvN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxR-nf-GOd" userLabel="BlurView">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SUA-Cq-UMR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM5-oO-agC" userLabel="CreateView">
+                                <rect key="frame" x="87" y="456" width="100" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mK-Ac-xx8">
+                                        <rect key="frame" x="15" y="20" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="CCy-NG-lhC"/>
+                                            <constraint firstAttribute="height" constant="70" id="RLf-8W-FFD"/>
+                                        </constraints>
+                                        <state key="normal" title="1" image="create-contact">
+                                            <color key="titleColor" red="0.46940944600000001" green="0.75670652140000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickNewContact:" destination="MAE-Uf-tzA" eventType="touchUpInside" id="zaC-yO-Bps"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新建联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-RX-aIn">
+                                        <rect key="frame" x="0.0" y="98" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.46940944600000001" green="0.75670652140000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2WC-1b-NBO"/>
+                                    <constraint firstItem="7mK-Ac-xx8" firstAttribute="leading" secondItem="OM5-oO-agC" secondAttribute="leading" constant="15" id="TSm-S6-fgp"/>
+                                    <constraint firstItem="7mK-Ac-xx8" firstAttribute="top" secondItem="OM5-oO-agC" secondAttribute="top" constant="20" id="WFp-da-MBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="7mK-Ac-xx8" secondAttribute="trailing" constant="15" id="aLg-zs-1Zh"/>
+                                    <constraint firstAttribute="height" constant="130" id="i8W-LS-BMJ"/>
+                                    <constraint firstItem="XHj-RX-aIn" firstAttribute="top" secondItem="7mK-Ac-xx8" secondAttribute="bottom" constant="8" id="kCb-3v-jAz"/>
+                                    <constraint firstItem="XHj-RX-aIn" firstAttribute="leading" secondItem="OM5-oO-agC" secondAttribute="leading" id="kHc-8z-PYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="XHj-RX-aIn" secondAttribute="trailing" id="zt2-C2-60Y"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODu-j8-Vif" userLabel="ContactView">
+                                <rect key="frame" x="227" y="456" width="100" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziG-yG-h4M">
+                                        <rect key="frame" x="15" y="20" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Tkf-Rh-Ijs"/>
+                                            <constraint firstAttribute="width" constant="70" id="rvh-dy-5a0"/>
+                                        </constraints>
+                                        <state key="normal" title="2" image="contact">
+                                            <color key="titleColor" red="0.46940944600000001" green="0.75670652140000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickContactBtn:" destination="MAE-Uf-tzA" eventType="touchUpInside" id="MJA-Vt-1wd"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通讯录添加" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3O-fQ-07i">
+                                        <rect key="frame" x="0.0" y="98" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.46940944600000001" green="0.75670652140000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ziG-yG-h4M" firstAttribute="top" secondItem="ODu-j8-Vif" secondAttribute="top" constant="20" id="Bku-HC-cgw"/>
+                                    <constraint firstAttribute="width" constant="100" id="ETL-df-gtj"/>
+                                    <constraint firstItem="ziG-yG-h4M" firstAttribute="centerX" secondItem="ODu-j8-Vif" secondAttribute="centerX" id="IwY-bm-mVr"/>
+                                    <constraint firstAttribute="trailing" secondItem="v3O-fQ-07i" secondAttribute="trailing" id="J5N-4B-i7i"/>
+                                    <constraint firstItem="v3O-fQ-07i" firstAttribute="top" secondItem="ziG-yG-h4M" secondAttribute="bottom" constant="8" id="JH9-Cr-fMj"/>
+                                    <constraint firstItem="v3O-fQ-07i" firstAttribute="leading" secondItem="ODu-j8-Vif" secondAttribute="leading" id="PUT-OU-CNZ"/>
+                                    <constraint firstItem="ziG-yG-h4M" firstAttribute="leading" secondItem="ODu-j8-Vif" secondAttribute="leading" constant="15" id="Rni-zo-iwn"/>
+                                    <constraint firstAttribute="trailing" secondItem="ziG-yG-h4M" secondAttribute="trailing" constant="15" id="U03-la-GgG"/>
+                                    <constraint firstAttribute="height" constant="130" id="iie-Jm-elm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pxR-nf-GOd" firstAttribute="leading" secondItem="auU-VD-jvN" secondAttribute="leading" id="2mt-gK-tWZ"/>
+                            <constraint firstItem="VgR-hh-YI8" firstAttribute="top" secondItem="OM5-oO-agC" secondAttribute="bottom" constant="150" id="6TI-Gf-Il1"/>
+                            <constraint firstItem="OM5-oO-agC" firstAttribute="centerX" secondItem="auU-VD-jvN" secondAttribute="centerX" constant="-70" id="Xyg-DD-k8O"/>
+                            <constraint firstItem="ODu-j8-Vif" firstAttribute="centerX" secondItem="auU-VD-jvN" secondAttribute="centerX" constant="70" id="cIR-QC-KTL"/>
+                            <constraint firstItem="pxR-nf-GOd" firstAttribute="top" secondItem="bfx-Uu-xQY" secondAttribute="bottom" id="hHu-Nw-20H"/>
+                            <constraint firstAttribute="trailing" secondItem="pxR-nf-GOd" secondAttribute="trailing" id="hPj-Oj-7BG"/>
+                            <constraint firstItem="VgR-hh-YI8" firstAttribute="top" secondItem="pxR-nf-GOd" secondAttribute="bottom" id="mAI-EI-OGl"/>
+                            <constraint firstItem="VgR-hh-YI8" firstAttribute="top" secondItem="ODu-j8-Vif" secondAttribute="bottom" constant="150" id="tL5-cA-Ekx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blurView" destination="pxR-nf-GOd" id="OMv-67-XsT"/>
+                        <outlet property="contactView" destination="ODu-j8-Vif" id="HuY-gH-qry"/>
+                        <outlet property="createContactBtn" destination="7mK-Ac-xx8" id="Ct2-dW-41G"/>
+                        <outlet property="createView" destination="OM5-oO-agC" id="fii-rb-SWt"/>
+                        <outlet property="selectContactBtn" destination="ziG-yG-h4M" id="DvL-q3-83u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5vr-93-2CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="726"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Info" width="100" height="100"/>
         <image name="close" width="100" height="100"/>
+        <image name="contact" width="100" height="100"/>
+        <image name="create-contact" width="100" height="100"/>
         <image name="deleteIcon" width="100" height="100"/>
         <image name="plus" width="100" height="100"/>
     </resources>
