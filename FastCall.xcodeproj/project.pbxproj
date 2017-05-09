@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		402AF7351EC05EDD0005ED82 /* FCContactChoosenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */; };
-		402AF7381EC0640F0005ED82 /* showSelectionContactSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7371EC0640F0005ED82 /* showSelectionContactSegue.m */; };
+		402AF7381EC0640F0005ED82 /* FCShowSelectionContactSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7371EC0640F0005ED82 /* FCShowSelectionContactSegue.m */; };
 		402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402C238B1EB2FDDC00DC793C /* Assets.xcassets */; };
 		402C238D1EB2FDDC00DC793C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402C238B1EB2FDDC00DC793C /* Assets.xcassets */; };
 		402C23901EB300D300DC793C /* FCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C238F1EB300D300DC793C /* FCCollectionView.m */; };
@@ -62,6 +62,12 @@
 		406B82B21EBC4A600014314F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406B82B01EBC4A600014314F /* libsqlite3.tbd */; };
 		6BC67BAD1EB99CD600816ABE /* FCWidgetSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */; };
 		6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */; };
+		6BE210D21EC0B067004469CA /* FCContactCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE210D11EC0B067004469CA /* FCContactCreationViewController.m */; };
+		6BE210D51EC0B1B1004469CA /* FCContactCreationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE210D41EC0B1B1004469CA /* FCContactCreationHeaderView.m */; };
+		6BE210D71EC0B1C5004469CA /* FCContactCreationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BE210D61EC0B1C5004469CA /* FCContactCreationHeaderView.xib */; };
+		6BE210DC1EC0B6C2004469CA /* LRTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE210DB1EC0B6C2004469CA /* LRTextField.m */; };
+		6BE210E01EC0B781004469CA /* FCContactCreationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE210DE1EC0B781004469CA /* FCContactCreationCell.m */; };
+		6BE210E11EC0B781004469CA /* FCContactCreationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BE210DF1EC0B781004469CA /* FCContactCreationCell.xib */; };
 		6BEF95D71EBACFFC00EDDD4B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,8 +126,8 @@
 /* Begin PBXFileReference section */
 		402AF7331EC05EDD0005ED82 /* FCContactChoosenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactChoosenViewController.h; sourceTree = "<group>"; };
 		402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactChoosenViewController.m; sourceTree = "<group>"; };
-		402AF7361EC0640F0005ED82 /* showSelectionContactSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showSelectionContactSegue.h; sourceTree = "<group>"; };
-		402AF7371EC0640F0005ED82 /* showSelectionContactSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showSelectionContactSegue.m; sourceTree = "<group>"; };
+		402AF7361EC0640F0005ED82 /* FCShowSelectionContactSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCShowSelectionContactSegue.h; sourceTree = "<group>"; };
+		402AF7371EC0640F0005ED82 /* FCShowSelectionContactSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCShowSelectionContactSegue.m; sourceTree = "<group>"; };
 		402AF7391EC087EE0005ED82 /* ToDo-List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDo-List.h"; sourceTree = "<group>"; };
 		402C238B1EB2FDDC00DC793C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		402C238E1EB300D300DC793C /* FCCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCollectionView.h; sourceTree = "<group>"; };
@@ -136,7 +142,7 @@
 		402C239E1EB346E200DC793C /* FCAddContactButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAddContactButton.m; sourceTree = "<group>"; };
 		404AEAE11EBB025000868C7C /* FCGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGifImageView.h; sourceTree = "<group>"; };
 		404AEAE21EBB025000868C7C /* FCGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGifImageView.m; sourceTree = "<group>"; };
-		404AEAE41EBB052700868C7C /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		404AEAE41EBB052700868C7C /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = ../Bugly.framework; sourceTree = "<group>"; };
 		404AEAE61EBB053B00868C7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		404AEAE81EBB054300868C7C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		404AEAEA1EBB054C00868C7C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -185,9 +191,9 @@
 		404F97771DEC4838006ECE21 /* FCContactModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FCContactModel.framework; sourceTree = "<group>"; };
 		404F97821DEC4991006ECE21 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
 		404F97831DEC4991006ECE21 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
-		406B82A81EBC25CE0014314F /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
-		406B82A91EBC25CE0014314F /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
-		406B82AB1EBC4A200014314F /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		406B82A81EBC25CE0014314F /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKDropdownAlert.h; path = ../RKDropdownAlert.h; sourceTree = "<group>"; };
+		406B82A91EBC25CE0014314F /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKDropdownAlert.m; path = ../RKDropdownAlert.m; sourceTree = "<group>"; };
+		406B82AB1EBC4A200014314F /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMMobClick.framework; path = ../UMMobClick.framework; sourceTree = "<group>"; };
 		406B82AD1EBC4A470014314F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		406B82AF1EBC4A600014314F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		406B82B01EBC4A600014314F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -195,6 +201,16 @@
 		6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWidgetSettingViewController.m; sourceTree = "<group>"; };
 		6BC67BAE1EB9ABB300816ABE /* FCWidgetSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWidgetSettingManager.h; sourceTree = "<group>"; };
 		6BC67BAF1EB9ABB300816ABE /* FCWidgetSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCWidgetSettingManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		6BE210D01EC0B067004469CA /* FCContactCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactCreationViewController.h; sourceTree = "<group>"; };
+		6BE210D11EC0B067004469CA /* FCContactCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactCreationViewController.m; sourceTree = "<group>"; };
+		6BE210D31EC0B1B1004469CA /* FCContactCreationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactCreationHeaderView.h; sourceTree = "<group>"; };
+		6BE210D41EC0B1B1004469CA /* FCContactCreationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactCreationHeaderView.m; sourceTree = "<group>"; };
+		6BE210D61EC0B1C5004469CA /* FCContactCreationHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCContactCreationHeaderView.xib; sourceTree = "<group>"; };
+		6BE210DA1EC0B6C2004469CA /* LRTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRTextField.h; sourceTree = "<group>"; };
+		6BE210DB1EC0B6C2004469CA /* LRTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRTextField.m; sourceTree = "<group>"; };
+		6BE210DD1EC0B781004469CA /* FCContactCreationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactCreationCell.h; sourceTree = "<group>"; };
+		6BE210DE1EC0B781004469CA /* FCContactCreationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactCreationCell.m; sourceTree = "<group>"; };
+		6BE210DF1EC0B781004469CA /* FCContactCreationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCContactCreationCell.xib; sourceTree = "<group>"; };
 		6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -292,12 +308,9 @@
 		404F96C41DEBCC97006ECE21 /* FastCall */ = {
 			isa = PBXGroup;
 			children = (
-				406B82AB1EBC4A200014314F /* UMMobClick.framework */,
-				406B82A81EBC25CE0014314F /* RKDropdownAlert.h */,
-				406B82A91EBC25CE0014314F /* RKDropdownAlert.m */,
-				404AEAE41EBB052700868C7C /* Bugly.framework */,
 				402C238B1EB2FDDC00DC793C /* Assets.xcassets */,
 				404F97361DEC201A006ECE21 /* FastCall.entitlements */,
+				6BE210D81EC0B692004469CA /* 3rd Party */,
 				404F97261DEC07EE006ECE21 /* Controller */,
 				404F97271DEC07EE006ECE21 /* Model */,
 				404F97281DEC07EE006ECE21 /* View */,
@@ -399,6 +412,8 @@
 				6BC67BAC1EB99CD600816ABE /* FCWidgetSettingViewController.m */,
 				402AF7331EC05EDD0005ED82 /* FCContactChoosenViewController.h */,
 				402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */,
+				6BE210D01EC0B067004469CA /* FCContactCreationViewController.h */,
+				6BE210D11EC0B067004469CA /* FCContactCreationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -425,8 +440,14 @@
 				402C239E1EB346E200DC793C /* FCAddContactButton.m */,
 				404AEAE11EBB025000868C7C /* FCGifImageView.h */,
 				404AEAE21EBB025000868C7C /* FCGifImageView.m */,
-				402AF7361EC0640F0005ED82 /* showSelectionContactSegue.h */,
-				402AF7371EC0640F0005ED82 /* showSelectionContactSegue.m */,
+				402AF7361EC0640F0005ED82 /* FCShowSelectionContactSegue.h */,
+				402AF7371EC0640F0005ED82 /* FCShowSelectionContactSegue.m */,
+				6BE210D31EC0B1B1004469CA /* FCContactCreationHeaderView.h */,
+				6BE210D41EC0B1B1004469CA /* FCContactCreationHeaderView.m */,
+				6BE210D61EC0B1C5004469CA /* FCContactCreationHeaderView.xib */,
+				6BE210DD1EC0B781004469CA /* FCContactCreationCell.h */,
+				6BE210DE1EC0B781004469CA /* FCContactCreationCell.m */,
+				6BE210DF1EC0B781004469CA /* FCContactCreationCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,6 +468,27 @@
 				404F97501DEC2D0E006ECE21 /* Info.plist */,
 			);
 			path = FCContactModelTests;
+			sourceTree = "<group>";
+		};
+		6BE210D81EC0B692004469CA /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				6BE210D91EC0B6C2004469CA /* LRTextField */,
+				406B82AB1EBC4A200014314F /* UMMobClick.framework */,
+				406B82A81EBC25CE0014314F /* RKDropdownAlert.h */,
+				406B82A91EBC25CE0014314F /* RKDropdownAlert.m */,
+				404AEAE41EBB052700868C7C /* Bugly.framework */,
+			);
+			path = "3rd Party";
+			sourceTree = "<group>";
+		};
+		6BE210D91EC0B6C2004469CA /* LRTextField */ = {
+			isa = PBXGroup;
+			children = (
+				6BE210DA1EC0B6C2004469CA /* LRTextField.h */,
+				6BE210DB1EC0B6C2004469CA /* LRTextField.m */,
+			);
+			path = LRTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,7 +698,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				404F96D81DEBCC97006ECE21 /* LaunchScreen.storyboard in Resources */,
+				6BE210E11EC0B781004469CA /* FCContactCreationCell.xib in Resources */,
 				402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */,
+				6BE210D71EC0B1C5004469CA /* FCContactCreationHeaderView.xib in Resources */,
 				404F96D01DEBCC97006ECE21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,11 +753,15 @@
 				404F96CD1DEBCC97006ECE21 /* FCBaseViewController.m in Sources */,
 				402C23901EB300D300DC793C /* FCCollectionView.m in Sources */,
 				404F96CA1DEBCC97006ECE21 /* AppDelegate.m in Sources */,
+				6BE210E01EC0B781004469CA /* FCContactCreationCell.m in Sources */,
 				404F972C1DEC0A5B006ECE21 /* FastCallCell.m in Sources */,
 				402C23981EB30F7100DC793C /* FCDataManager.m in Sources */,
+				6BE210D51EC0B1B1004469CA /* FCContactCreationHeaderView.m in Sources */,
 				402C239F1EB346E200DC793C /* FCAddContactButton.m in Sources */,
+				6BE210D21EC0B067004469CA /* FCContactCreationViewController.m in Sources */,
 				402C23941EB300F300DC793C /* FCCollectionLayout.m in Sources */,
-				402AF7381EC0640F0005ED82 /* showSelectionContactSegue.m in Sources */,
+				402AF7381EC0640F0005ED82 /* FCShowSelectionContactSegue.m in Sources */,
+				6BE210DC1EC0B6C2004469CA /* LRTextField.m in Sources */,
 				402C239C1EB3231300DC793C /* FCSettingViewController.m in Sources */,
 				6BC67BB01EB9ABB300816ABE /* FCWidgetSettingManager.m in Sources */,
 				404F97841DEC4991006ECE21 /* ContactModel.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface showSelectionContactSegue : UIStoryboardSegue
+@interface FCShowSelectionContactSegue : UIStoryboardSegue
 
 - (void)perform;
 
