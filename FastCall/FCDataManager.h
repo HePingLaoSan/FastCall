@@ -26,4 +26,6 @@
 
 -(void)completeAddingGuide;
 
+-(void)saveToDisk;
+
 @end

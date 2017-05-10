@@ -10,6 +10,13 @@
 #import "LRTextField.h"
 
 @interface FCContactCreationCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet LRTextField *myTextField;
+
+@property (weak, nonatomic) IBOutlet UIView *lineView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineViewTrailing;
+
+-(void)performAnimation;
 
 @end

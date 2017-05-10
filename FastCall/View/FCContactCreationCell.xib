@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="KGk-i7-Jjw" customClass="FCContactCreationCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="FCContactCreationCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13n-LC-tDG" customClass="LRTextField">
-                        <rect key="frame" x="110" y="12" width="100" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="13n-LC-tDG" customClass="LRTextField">
+                        <rect key="frame" x="20" y="27.5" width="280" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="uFU-HO-NKj"/>
+                            <constraint firstAttribute="height" constant="35" id="6bh-Sp-iSZ"/>
                         </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderActiveColor">
+                                <color key="value" red="0.46940944600000001" green="0.75670652140000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderInactiveColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iey-Bl-Rb2" userLabel="Line View">
+                        <rect key="frame" x="20" y="69" width="280" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="CYH-IE-3e5"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="13n-LC-tDG" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="2p2-Dd-FWV"/>
-                    <constraint firstItem="13n-LC-tDG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MF5-Ci-Cd5"/>
+                    <constraint firstAttribute="trailing" secondItem="Iey-Bl-Rb2" secondAttribute="trailing" constant="20" id="Ckh-EB-fBt"/>
+                    <constraint firstItem="13n-LC-tDG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="F16-xd-QJ2"/>
+                    <constraint firstAttribute="bottom" secondItem="Iey-Bl-Rb2" secondAttribute="bottom" id="LtU-Vp-DxQ"/>
+                    <constraint firstItem="13n-LC-tDG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="10" id="MF5-Ci-Cd5"/>
+                    <constraint firstAttribute="trailing" secondItem="13n-LC-tDG" secondAttribute="trailing" constant="20" id="RmT-zM-NTH"/>
+                    <constraint firstItem="Iey-Bl-Rb2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jk4-Fn-rpa"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="lineView" destination="Iey-Bl-Rb2" id="LTt-1l-cc6"/>
+                <outlet property="lineViewTrailing" destination="Ckh-EB-fBt" id="81d-JT-ug2"/>
                 <outlet property="myTextField" destination="13n-LC-tDG" id="weJ-Tg-wK2"/>
             </connections>
-            <point key="canvasLocation" x="34" y="60"/>
+            <point key="canvasLocation" x="34" y="67"/>
         </tableViewCell>
     </objects>
 </document>

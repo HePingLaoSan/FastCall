@@ -10,6 +10,7 @@
 #import "FCWidgetSettingManager.h"
 #import <Bugly/Bugly.h>
 #import <UMMobClick/MobClick.h>
+#import "IQKeyboardManager.h"
 
 #define iOS10Above ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #define iOS9Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
@@ -33,6 +34,8 @@
     UMConfigInstance.appKey = @"590c124f717c194ef70015a5";
     [MobClick setCrashReportEnabled:NO];
     [MobClick startWithConfigure:UMConfigInstance];
+    
+    [IQKeyboardManager sharedManager].enable = YES;
     
     if ([FCWidgetSettingManager checkWidgetInstalled]) {
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;

@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backGroundImageView;
 
-@property (weak, nonatomic) IBOutlet UIButton *headerButton;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+
+-(void)updateAvatar:(UIImage *)newAvatar;
 
 @end

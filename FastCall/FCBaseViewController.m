@@ -15,6 +15,7 @@
 #import "FCDataManager.h"
 #import "FCAddContactButton.h"
 #import "RKDropdownAlert.h"
+#import "FCContactCreationViewController.h"
 
 @import FCContactModel;
 
@@ -61,7 +62,18 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    FCContactCreationViewController *fcVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FCContactCreationViewController"];
+    
+//    fcVC.contactModel = model;
+    [self.navigationController pushViewController:fcVC animated:YES];
+}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ContactModel *model = dataManager.dataSourcesArray[0];
+    FCContactCreationViewController *fcVC = segue.destinationViewController;
+    fcVC.contactModel = model;
+    [super prepareForSegue:segue sender:sender];
 }
 
 #pragma mark - FCContactManagerDelegate
@@ -100,17 +112,11 @@
     }
     if (index >= dataManager.dataSourcesArray.count) {
         [dataManager.dataSourcesArray addObject:contactModel];
-        NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:dataManager.dataSourcesArray];
-        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
-        [userDef setObject:storeData forKey:@"localData"];
-        [userDef synchronize];
+        [dataManager saveToDisk];
     }else{
         //replace
         [dataManager.dataSourcesArray replaceObjectAtIndex:index withObject:contactModel];
-        NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:dataManager.dataSourcesArray];
-        NSUserDefaults *userDef = [[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"];
-        [userDef setObject:storeData forKey:@"localData"];
-        [userDef synchronize];
+        [dataManager saveToDisk];
     }
     [_myCollectionView reloadData];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -157,9 +163,6 @@
     CGPoint currentPoint = [touch locationInView:_myCollectionView];
     NSIndexPath *indexPath = [_myCollectionView indexPathForItemAtPoint:currentPoint];
     if (indexPath.section == 0 && indexPath != nil) { //点击移除
-        inEditMode = NO;
-        FCCollectionLayout *layout = (FCCollectionLayout *)_myCollectionView.collectionViewLayout;
-        layout.inEditState = NO;
         [_myCollectionView performBatchUpdates:^{
             [_myCollectionView deleteItemsAtIndexPaths:@[indexPath]];
             [dataManager deleteItemAtIndexPath:indexPath.row]; //删除
