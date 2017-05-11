@@ -39,7 +39,7 @@
     
     if ([FCWidgetSettingManager checkWidgetInstalled]) {
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
-        UIViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+        UIViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPageNav"];
         self.window.rootViewController = rootViewController;
         [self.window makeKeyAndVisible];
     }

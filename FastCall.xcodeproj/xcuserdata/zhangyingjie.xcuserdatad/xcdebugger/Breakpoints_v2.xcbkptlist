@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FastCall/FCBaseViewController.m"
-            timestampString = "516109247.265776"
+            filePath = "FastCall/View/FCContactCreationHeaderView.m"
+            timestampString = "516179426.420961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-updateAvatar:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FastCall/FCBaseViewController.m"
-            timestampString = "516109260.98555"
+            filePath = "FastCall/FCContactManager.m"
+            timestampString = "516179637.220127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-contactPicker:didSelectContact:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,8 +8,9 @@
 
 #import "FCContactChoosenViewController.h"
 #import "FCBaseViewController.h"
+#import "FCContactCreationViewController.h"
 
-@interface FCContactChoosenViewController ()
+@interface FCContactChoosenViewController ()<FCContactCreationDelegate>
 
 @end
 
@@ -83,12 +84,33 @@
 
 - (IBAction)clickContactBtn:(id)sender {
 
-    FCBaseViewController *homeVC = (FCBaseViewController *)self.presentingViewController;
-    
+    UINavigationController *homeNav = (UINavigationController *)self.presentingViewController;
+    FCBaseViewController *homeVC = [homeNav.viewControllers firstObject];
     [homeVC clickAddBtn:self];
 }
 
 - (IBAction)clickNewContact:(id)sender{
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"NewContact"]) {
+        UINavigationController *createNav = segue.destinationViewController;
+        FCContactCreationViewController *createVC = [createNav.viewControllers firstObject];
+        createVC.delegate = self;
+        [super prepareForSegue:segue sender:sender];
+    }
+}
+
+-(void)contactCreationViewControllerdidFinishCreationContact:(FCContactCreationViewController *)viewController{
+    UINavigationController *homeNav = (UINavigationController *)self.presentingViewController;
+    FCBaseViewController *homeVC = [homeNav.viewControllers firstObject];
+    [homeVC refresh];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)contactCreationViewControllerdidCancelCreationContact:(FCContactCreationViewController *)viewController{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

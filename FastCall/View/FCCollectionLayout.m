@@ -194,4 +194,11 @@
     return _tapGesture;
 }
 
+-(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]] && self.inEditState==NO) {
+        return NO;
+    }
+    return YES;
+}
+
 @end

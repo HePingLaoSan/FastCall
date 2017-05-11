@@ -16,5 +16,7 @@
 
 - (void)clickAddBtn:(UIViewController *)presentedVC;
 
+- (void)refresh;
+
 @end
 

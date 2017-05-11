@@ -12,6 +12,8 @@
 #import "FCContactCreationHeaderView.h"
 #import "FCContactCreationCell.h"
 #import "FCDataManager.h"
+#import "NSString+Extension.h"
+#import "UIImage+Extension.h"
 
 static CGFloat headerViewHeight = 190.0f;
 
@@ -70,16 +72,17 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     _myTableView.tableHeaderView = headerView;
     _myTableView.sectionHeaderHeight = headerViewHeight;
     if (_contactModel.contact_avatar) {
-        headerView.headerImageView.image = [UIImage imageWithData:_contactModel.contact_avatar];
+        UIImage *image = [UIImage imageWithData:_contactModel.contact_avatar];
+        headerView.headerImageView.image = image;
     }
 }
 
 -(void)configInfoArray{
     infoArray = [NSMutableArray array];
-    [infoArray addObject:_contactModel.contact_avatar?:[NSNull null]];
-    [infoArray addObject:_contactModel.contact_name?:[NSNull null]];
-    [infoArray addObject:_contactModel.contact_phoneNumber?:[NSNull null]];
-    [infoArray addObject:_contactModel.contact_email?:[NSNull null]];
+    [infoArray addObject:_contactModel.contact_avatar?:@""];
+    [infoArray addObject:_contactModel.contact_name?:@""];
+    [infoArray addObject:_contactModel.contact_phoneNumber?:@""];
+    [infoArray addObject:_contactModel.contact_email?:@""];
 }
 
 -(void)initNavItems{
@@ -120,20 +123,11 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     cell.myTextField.placeholder = dataSources[indexPath.section];
     cell.myTextField.tag = 1000 + indexPath.section +1; //1000留给头像
     cell.myTextField.delegate = self;
-    switch (indexPath.section) {
-        case 0:
-            cell.myTextField.text = _contactModel.contact_name;
-            break;
-        case 1:
-            cell.myTextField.text = _contactModel.contact_phoneNumber;
-            break;
-        case 2:
-            cell.myTextField.text = _contactModel.contact_email;
-            break;
-            
-        default:
-            break;
-    }
+    [cell.myTextField becomeFirstResponder];
+    cell.myTextField.text = infoArray[indexPath.section+1];
+    [cell.myTextField resignFirstResponder];
+    
+    
     
     return cell;
 }
@@ -218,6 +212,9 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     [headerView updateAvatar:image];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         _contactModel.contact_avatar = UIImagePNGRepresentation(image);
+        UIImage *compressImage = [UIImage compressImage:image newWidth:100];
+        _contactModel.contact_thumbnail = [UIImage zipImageWithImage:compressImage];
+
         [infoArray replaceObjectAtIndex:0 withObject:_contactModel.contact_avatar];
     });
 }
@@ -231,13 +228,35 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     }];
 }
 
+-(BOOL)checkInfoAvailable{
+    NSString *nameString = infoArray[1];
+    NSString *phonenumber = infoArray[2];
+    if (nameString.length==0 || phonenumber.length==0) {
+        return NO;
+    }
+    return YES;
+}
+
 -(void)saveContact{
     [self.view endEditing:YES];
     
-    _contactModel.contact_avatar = [infoArray firstObject];
-    _contactModel.contact_name = infoArray[1];
-    _contactModel.contact_phoneNumber = infoArray[2];
-    _contactModel.contact_email = infoArray[3];
+
+    NSString *nameString = infoArray[1];
+    NSString *phonenumber = infoArray[2];
+    NSString *email = infoArray[3];
+    if (![self checkInfoAvailable]) {
+        return;
+    }
+    
+    NSData *avatarData = [infoArray firstObject];
+    if (avatarData == nil) {
+        avatarData = UIImagePNGRepresentation([UIImage imageNamed:@"defaultAvatar"]);
+        _contactModel.contact_avatar = avatarData;
+        _contactModel.contact_thumbnail = avatarData;
+    }
+    _contactModel.contact_name = nameString;
+    _contactModel.contact_phoneNumber = phonenumber;
+    _contactModel.contact_email = email;
     
     _contactModel.contact_id = @"0";
     

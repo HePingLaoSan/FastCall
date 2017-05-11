@@ -17,7 +17,10 @@
 @protocol FCContactManagerDelegate <NSObject>
 
 @optional
+
 -(void)viewController:(UIViewController *)hostViewController didSelectContact:(ContactModel *)contactModel;
+
+-(void)viewController:(UIViewController *)hostViewController didSelectContacts:(NSArray< ContactModel *>*)contactModels;
 
 -(void)didCloseContactController:(UIViewController *)hostViewController;
 

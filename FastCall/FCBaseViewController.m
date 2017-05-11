@@ -63,18 +63,18 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     FCContactCreationViewController *fcVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FCContactCreationViewController"];
-    
-//    fcVC.contactModel = model;
+    ContactModel *model = dataManager.dataSourcesArray[indexPath.row];
+    fcVC.contactModel = model;
     [self.navigationController pushViewController:fcVC animated:YES];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    ContactModel *model = dataManager.dataSourcesArray[0];
-    FCContactCreationViewController *fcVC = segue.destinationViewController;
-    fcVC.contactModel = model;
-    [super prepareForSegue:segue sender:sender];
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    
+//    ContactModel *model = dataManager.dataSourcesArray[0];
+//    FCContactCreationViewController *fcVC = segue.destinationViewController;
+//    fcVC.contactModel = model;
+//    [super prepareForSegue:segue sender:sender];
+//}
 
 #pragma mark - FCContactManagerDelegate
 -(void)didCloseContactController:(UIViewController *)hostViewController{
@@ -86,13 +86,20 @@
         [_addContactBtn resetAnimation];
     });
 }
+
+-(void)viewController:(UIViewController *)hostViewController didSelectContacts:(NSArray<ContactModel *> *)contactModels{
+    for (ContactModel* contactModel in contactModels) {
+        [self viewController:hostViewController didSelectContact:contactModel];
+    }
+}
+
 -(void)viewController:(UIViewController *)hostViewController didSelectContact:(ContactModel *)contactModel{
     hostViewController.view.hidden = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [hostViewController dismissViewControllerAnimated:NO completion:nil];
     });
+    
     if ([dataManager isFirstTimeAddingContact]) {
-        
         [dataManager completeAddingGuide];
         [RKDropdownAlert title:@"成功添加" message:@"长按联系人进行删除、排序" backgroundColor:nil textColor:nil time:20];
     }
@@ -178,6 +185,12 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self clickAddBtn:nil];
     });
+}
+
+-(void)refresh{
+    
+    [dataManager refresh];
+    [_myCollectionView reloadData];
 }
 
 @end

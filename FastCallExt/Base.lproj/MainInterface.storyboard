@@ -31,17 +31,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="2ts-b1-OPZ">
-                                    <size key="itemSize" width="70" height="90"/>
+                                    <size key="itemSize" width="70" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FastCallCell" id="BB5-lL-aQB" customClass="FastCallCell">
-                                        <rect key="frame" x="10" y="10" width="70" height="90"/>
+                                        <rect key="frame" x="10" y="10" width="70" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T9B-hf-8aG">
@@ -54,7 +54,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-CF-wmd">
-                                                    <rect key="frame" x="0.0" y="70" width="70" height="20"/>
+                                                    <rect key="frame" x="0.0" y="70" width="70" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="T9B-hf-8aG" secondAttribute="bottom" constant="20" id="1Hl-rU-iUm"/>
+                                            <constraint firstAttribute="bottom" secondItem="T9B-hf-8aG" secondAttribute="bottom" constant="25" id="1Hl-rU-iUm"/>
                                             <constraint firstItem="T9B-hf-8aG" firstAttribute="top" secondItem="BB5-lL-aQB" secondAttribute="top" id="2CX-kk-HY4"/>
                                             <constraint firstItem="T9B-hf-8aG" firstAttribute="leading" secondItem="BB5-lL-aQB" secondAttribute="leading" id="HXf-57-nE4"/>
                                             <constraint firstAttribute="trailing" secondItem="T9B-hf-8aG" secondAttribute="trailing" id="O0v-K8-qmR"/>

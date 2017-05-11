@@ -15,15 +15,7 @@
 -(instancetype)init{
     self = [super init];
     
-    NSData *dataLocal = [[[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"] objectForKey:@"localData"];
-    NSArray *contactsLocal = [NSKeyedUnarchiver unarchiveObjectWithData:dataLocal];
-    if (contactsLocal==nil) {
-        _dataSourcesArray = [@[] mutableCopy];
-    }else{
-        _dataSourcesArray = [contactsLocal mutableCopy];
-    }
-    
-    
+    [self refresh];
     
     return self;
 }
@@ -42,7 +34,6 @@
         [self.dataSourcesArray removeObjectAtIndex:indexPath];
         [self saveToDisk];
     }
-
 }
 
 -(void)moveItemFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex{
@@ -64,4 +55,13 @@
     [userDef synchronize];
 }
 
+-(void)refresh{
+    NSData *dataLocal = [[[NSUserDefaults alloc]initWithSuiteName:@"group.hepinglaosan.Kall"] objectForKey:@"localData"];
+    NSArray *contactsLocal = [NSKeyedUnarchiver unarchiveObjectWithData:dataLocal];
+    if (contactsLocal==nil) {
+        _dataSourcesArray = [@[] mutableCopy];
+    }else{
+        _dataSourcesArray = [contactsLocal mutableCopy];
+    }
+}
 @end

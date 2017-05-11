@@ -105,7 +105,7 @@
                                 <color key="textColor" red="0.84683423859999996" green="0.23985968023015172" blue="0.30895868901557766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YCW-bt-hPq">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YCW-bt-hPq">
                                 <rect key="frame" x="0.0" y="64" width="414" height="572"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="3Eo-rz-M8C" customClass="FCCollectionLayout"/>
@@ -156,7 +156,6 @@
                                             <outlet property="callImageView" destination="ZqP-Qm-a5m" id="Upd-QQ-OUq"/>
                                             <outlet property="contactName" destination="5eX-zP-sxn" id="0eq-yo-HdK"/>
                                             <outlet property="deleteBtn" destination="nMA-mL-hYE" id="7Hg-AE-4hv"/>
-                                            <segue destination="GPz-2M-oNh" kind="showDetail" identifier="PushToProfile" id="i5K-n4-eRX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -334,7 +333,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickNewContact:" destination="MAE-Uf-tzA" eventType="touchUpInside" id="zaC-yO-Bps"/>
-                                            <segue destination="2S7-Mk-EXe" kind="presentation" id="ZmW-HT-o9S"/>
+                                            <segue destination="2S7-Mk-EXe" kind="presentation" identifier="NewContact" id="ZmW-HT-o9S"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新建联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-RX-aIn">
@@ -415,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vr-93-2CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="726"/>
+            <point key="canvasLocation" x="-542" y="765"/>
         </scene>
         <!--Contact Creation View Controller-->
         <scene sceneID="80x-sq-T0f">
@@ -430,7 +429,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-GL-2Nl">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="GPz-2M-oNh" id="Sxz-z4-uUv"/>
@@ -453,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQu-1r-DD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="726"/>
+            <point key="canvasLocation" x="1117" y="765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z5g-d7-kU7">
@@ -471,12 +470,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGa-WI-U5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="726"/>
+            <point key="canvasLocation" x="275" y="765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S9x-qz-Svr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Nam-6B-GfC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainPageNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Nam-6B-GfC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f6f-u9-btm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -500,7 +499,4 @@
         <image name="deleteIcon" width="100" height="100"/>
         <image name="plus" width="100" height="100"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="i5K-n4-eRX"/>
-    </inferredMetricsTieBreakers>
 </document>

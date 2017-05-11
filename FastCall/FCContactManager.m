@@ -9,7 +9,7 @@
 #import "FCContactManager.h"
 #import <UIKit/UIKit.h>
 #import <FCContactModel/FCContactModel.h>
-//#import "ContactModel.h"
+#import "UIImage+Extension.h"
 
 #define iOS10Above ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #define iOS9Above  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
@@ -77,6 +77,7 @@ static FCContactManager *contactManager = nil;
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
     
 }
+
 // Called after the user has pressed cancel.
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
     if ([_delegate respondsToSelector:@selector(didCloseContactController:)]) {
@@ -114,9 +115,47 @@ static FCContactManager *contactManager = nil;
     }
 }
 
+-(UIImage *)getResizedImageWithData:(NSData *)imageData{
+    UIImage *orignalImage = [UIImage imageWithData:imageData];
+    UIImage *resizeImage = [orignalImage clipWithImageRect:CGRectMake(0, 0, MIN(orignalImage.size.width, orignalImage.size.height), MIN(orignalImage.size.width, orignalImage.size.height)) clipImage:orignalImage];
+    return resizeImage;
+}
 
-- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty{
-    
+-(NSData *)getResizedImageData:(NSData *)imageData{
+    UIImage *orignalImage = [UIImage imageWithData:imageData];
+    UIImage *resizeImage = [orignalImage clipWithImageRect:CGRectMake(0, 0, MIN(orignalImage.size.width, orignalImage.size.height), MIN(orignalImage.size.width, orignalImage.size.height)) clipImage:orignalImage];
+    return UIImagePNGRepresentation(resizeImage);
+}
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContacts:(NSArray<CNContact *> *)contact{
+
+    NSMutableArray *resultArray = [NSMutableArray array];
+    for (CNContact *eachContact in contact) {
+        
+        ContactModel *model = [[ContactModel alloc]init];
+        model.contact_id = eachContact.identifier;
+        model.contact_avatar = [self getResizedImageData:eachContact.imageData];
+        model.contact_thumbnail = [self getResizedImageData:eachContact.thumbnailImageData];
+        NSString *name = eachContact.givenName;
+        if (eachContact.familyName.length>0) {
+            name = [NSString stringWithFormat:@"%@%@",eachContact.familyName,eachContact.givenName];
+        }
+        model.contact_name = name;
+        NSArray *phoneNums = eachContact.phoneNumbers;
+        for (CNLabeledValue *labeledValue in phoneNums) {
+            // 2.2.获取电话号码
+            CNPhoneNumber *phoneNumer = labeledValue.value;
+            NSString *phoneValue = phoneNumer.stringValue;
+            model.contact_phoneNumber = phoneValue;
+            if (phoneValue) {
+                break;
+            }
+        }
+        [resultArray addObject:model];
+    }
+    if ([_delegate respondsToSelector:@selector(viewController:didSelectContacts:)]) {
+        [_delegate viewController:hostViewController didSelectContacts:resultArray];
+    }
 }
 
 

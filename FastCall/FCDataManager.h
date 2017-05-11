@@ -14,18 +14,16 @@
 
 @property (nonatomic , strong) NSMutableArray *dataSourcesArray;
 
+- (void)deleteItemAtIndexPath:(NSInteger)indexPath;
 
--(void)deleteItemAtIndexPath:(NSInteger)indexPath;
+- (void)moveItemFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
+- (BOOL)isFirstTimeAddingContact;
 
--(void)moveItemFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)completeAddingGuide;
 
+- (void)saveToDisk;
 
--(BOOL)isFirstTimeAddingContact;
-
-
--(void)completeAddingGuide;
-
--(void)saveToDisk;
+- (void)refresh;
 
 @end
