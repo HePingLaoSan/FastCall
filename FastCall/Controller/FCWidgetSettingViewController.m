@@ -40,7 +40,7 @@
             if ([self currentWidgetState]) {
                 //您已添加widget 去设置联系人
                 UIStoryboard *storyboard = self.view.window.rootViewController.storyboard;
-                UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+                UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainPageNav"];
                 [self presentViewController:mainViewController animated:YES completion:^{
                     self.view.window.rootViewController = mainViewController;
                 }];

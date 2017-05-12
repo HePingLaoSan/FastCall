@@ -75,25 +75,17 @@
 
 - (UIImage *)clipWithImageRect:(CGRect)clipRect clipImage:(UIImage *)clipImage
 {
-    CGFloat offsetY = 0;
-    CGFloat offsetX = 0;
-    if (clipImage.size.width > clipRect.size.width) {
-        offsetX = (clipImage.size.width - clipRect.size.width)/2;
-    }
     
-    if (clipImage.size.height > clipRect.size.height) {
-        offsetY = (clipImage.size.height - clipRect.size.height)/2;
-    }
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(clipImage.CGImage, clipRect);
+    CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
     
-    UIGraphicsBeginImageContext(clipRect.size);
-    
-    [clipImage drawInRect:CGRectMake(offsetX, offsetY, clipRect.size.width, clipRect.size.height)];
-    
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
+    UIGraphicsBeginImageContext(smallBounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, smallBounds, subImageRef);
+    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
     UIGraphicsEndImageContext();
     
-    return  newImage;
+    return smallImage;
     
 }
 @end

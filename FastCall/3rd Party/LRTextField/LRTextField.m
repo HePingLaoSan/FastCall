@@ -95,6 +95,7 @@
     if ( !_format )
     {
         [super setText:text];
+        [self updatePlaceholder];
         return;
     }
     

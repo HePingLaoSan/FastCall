@@ -419,17 +419,17 @@
         <!--Contact Creation View Controller-->
         <scene sceneID="80x-sq-T0f">
             <objects>
-                <viewController storyboardIdentifier="FCContactCreationViewController" id="GPz-2M-oNh" customClass="FCContactCreationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FCContactCreationViewController" automaticallyAdjustsScrollViewInsets="NO" id="GPz-2M-oNh" customClass="FCContactCreationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2PK-jY-4fH"/>
                         <viewControllerLayoutGuide type="bottom" id="qpf-aR-qZx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="24L-2g-w6t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-GL-2Nl">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-GL-2Nl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="GPz-2M-oNh" id="Sxz-z4-uUv"/>
@@ -445,6 +445,7 @@
                             <constraint firstItem="bbY-GL-2Nl" firstAttribute="top" secondItem="2PK-jY-4fH" secondAttribute="bottom" id="sIz-RK-6c0"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="r7S-Yg-uIH"/>
                     <connections>
                         <outlet property="myTableView" destination="bbY-GL-2Nl" id="q0h-K3-mgU"/>
@@ -457,7 +458,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Z5g-d7-kU7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2S7-Mk-EXe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FCContactCreationNAV" id="2S7-Mk-EXe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R4A-uk-V0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

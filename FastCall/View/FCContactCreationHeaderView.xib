@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lyP-8o-VIB" userLabel="backGroundImageView">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lyP-8o-VIB" userLabel="backGroundImageView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                     <color key="backgroundColor" red="0.63162506709999999" green="0.62857373829999996" blue="0.63467639590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>

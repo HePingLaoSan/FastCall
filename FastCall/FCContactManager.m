@@ -123,7 +123,18 @@ static FCContactManager *contactManager = nil;
 
 -(NSData *)getResizedImageData:(NSData *)imageData{
     UIImage *orignalImage = [UIImage imageWithData:imageData];
-    UIImage *resizeImage = [orignalImage clipWithImageRect:CGRectMake(0, 0, MIN(orignalImage.size.width, orignalImage.size.height), MIN(orignalImage.size.width, orignalImage.size.height)) clipImage:orignalImage];
+    CGRect clipRect = CGRectMake(0, 0, MIN(orignalImage.size.width, orignalImage.size.height), MIN(orignalImage.size.width, orignalImage.size.height));
+    CGFloat offsetY = 0;
+    CGFloat offsetX = 0;
+    if (orignalImage.size.width > clipRect.size.width) {
+        offsetX = (orignalImage.size.width - clipRect.size.width)/2;
+    }
+    
+    if (orignalImage.size.height > clipRect.size.height) {
+        offsetY = (orignalImage.size.height - clipRect.size.height)/2;
+    }
+    clipRect = CGRectMake(offsetX, offsetY, MIN(orignalImage.size.width, orignalImage.size.height), MIN(orignalImage.size.width, orignalImage.size.height));
+    UIImage *resizeImage = [orignalImage clipWithImageRect:clipRect clipImage:orignalImage];
     return UIImagePNGRepresentation(resizeImage);
 }
 

@@ -62,10 +62,12 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    FCContactCreationViewController *fcVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FCContactCreationViewController"];
+    UINavigationController *fcNav = [self.storyboard instantiateViewControllerWithIdentifier:@"FCContactCreationNAV"];
+    FCContactCreationViewController *fcVC = [fcNav.viewControllers firstObject];
     ContactModel *model = dataManager.dataSourcesArray[indexPath.row];
     fcVC.contactModel = model;
-    [self.navigationController pushViewController:fcVC animated:YES];
+//    [self.navigationController pushViewController:fcVC animated:YES];
+    [self presentViewController:fcNav animated:YES completion:nil];
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

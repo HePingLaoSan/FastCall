@@ -39,7 +39,7 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+    self.navigationController.navigationBar.translucent = NO;
     
     [self configHeaderView];
     
@@ -56,6 +56,7 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     if (_contactModel == nil) {
         self.title = NSLocalizedString(@"New Contact", @"New Contact");
         _contactModel = [[ContactModel alloc]init];
+        _contactModel.contact_id = @"0";
     }else{
         self.title = NSLocalizedString(@"Modify Contact", @"Modify Contact");
     }
@@ -74,6 +75,7 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     if (_contactModel.contact_avatar) {
         UIImage *image = [UIImage imageWithData:_contactModel.contact_avatar];
         headerView.headerImageView.image = image;
+        headerView.backGroundImageView.image = image;
     }
 }
 
@@ -123,11 +125,7 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     cell.myTextField.placeholder = dataSources[indexPath.section];
     cell.myTextField.tag = 1000 + indexPath.section +1; //1000留给头像
     cell.myTextField.delegate = self;
-    [cell.myTextField becomeFirstResponder];
     cell.myTextField.text = infoArray[indexPath.section+1];
-    [cell.myTextField resignFirstResponder];
-    
-    
     
     return cell;
 }
@@ -258,9 +256,19 @@ static NSString *const kFCContactCreationCellIdentifier = @"FCContactCreationCel
     _contactModel.contact_phoneNumber = phonenumber;
     _contactModel.contact_email = email;
     
-    _contactModel.contact_id = @"0";
+    NSInteger indexModel = [dataManager.dataSourcesArray indexOfObjectPassingTest:^BOOL(ContactModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.contact_id isEqualToString:_contactModel.contact_id]) {
+            return YES;
+        }
+        return NO;
+    }];
+    if (indexModel == NSNotFound) {
+        [dataManager.dataSourcesArray addObject:_contactModel];
+    }else{
+        [dataManager.dataSourcesArray replaceObjectAtIndex:indexModel withObject:_contactModel];
+    }
+        
     
-    [dataManager.dataSourcesArray addObject:_contactModel];
     [dataManager saveToDisk];
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         if ([_delegate respondsToSelector:@selector(contactCreationViewControllerdidFinishCreationContact:)]) {
