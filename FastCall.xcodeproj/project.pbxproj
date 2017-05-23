@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		402AF7351EC05EDD0005ED82 /* FCContactChoosenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7341EC05EDD0005ED82 /* FCContactChoosenViewController.m */; };
 		402AF7381EC0640F0005ED82 /* FCShowSelectionContactSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 402AF7371EC0640F0005ED82 /* FCShowSelectionContactSegue.m */; };
-		402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402C238B1EB2FDDC00DC793C /* Assets.xcassets */; };
 		402C238D1EB2FDDC00DC793C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402C238B1EB2FDDC00DC793C /* Assets.xcassets */; };
 		402C23901EB300D300DC793C /* FCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C238F1EB300D300DC793C /* FCCollectionView.m */; };
 		402C23911EB300D300DC793C /* FCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 402C238F1EB300D300DC793C /* FCCollectionView.m */; };
@@ -86,6 +85,9 @@
 		6BE210E01EC0B781004469CA /* FCContactCreationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE210DE1EC0B781004469CA /* FCContactCreationCell.m */; };
 		6BE210E11EC0B781004469CA /* FCContactCreationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BE210DF1EC0B781004469CA /* FCContactCreationCell.xib */; };
 		6BEF95D71EBACFFC00EDDD4B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */; };
+		6BF9C87A1ED1D43D002D2948 /* FCDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF9C8791ED1D43D002D2948 /* FCDialViewController.m */; };
+		6BF9C87D1ED47419002D2948 /* FCDialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF9C87C1ED47419002D2948 /* FCDialButton.m */; };
+		6BF9C87E1ED4807B002D2948 /* FCDialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF9C87C1ED47419002D2948 /* FCDialButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +266,10 @@
 		6BE210DE1EC0B781004469CA /* FCContactCreationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactCreationCell.m; sourceTree = "<group>"; };
 		6BE210DF1EC0B781004469CA /* FCContactCreationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCContactCreationCell.xib; sourceTree = "<group>"; };
 		6BEF95D61EBACFFC00EDDD4B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6BF9C8781ED1D43D002D2948 /* FCDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDialViewController.h; sourceTree = "<group>"; };
+		6BF9C8791ED1D43D002D2948 /* FCDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDialViewController.m; sourceTree = "<group>"; };
+		6BF9C87B1ED47419002D2948 /* FCDialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDialButton.h; sourceTree = "<group>"; };
+		6BF9C87C1ED47419002D2948 /* FCDialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDialButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +443,8 @@
 				404F970A1DEBCE8D006ECE21 /* Info.plist */,
 				404F97121DEBD32F006ECE21 /* FastCallCell.h */,
 				404F97131DEBD32F006ECE21 /* FastCallCell.m */,
+				6BF9C8781ED1D43D002D2948 /* FCDialViewController.h */,
+				6BF9C8791ED1D43D002D2948 /* FCDialViewController.m */,
 			);
 			path = FastCallExt;
 			sourceTree = "<group>";
@@ -501,6 +509,8 @@
 				6BE210DD1EC0B781004469CA /* FCContactCreationCell.h */,
 				6BE210DE1EC0B781004469CA /* FCContactCreationCell.m */,
 				6BE210DF1EC0B781004469CA /* FCContactCreationCell.xib */,
+				6BF9C87B1ED47419002D2948 /* FCDialButton.h */,
+				6BF9C87C1ED47419002D2948 /* FCDialButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -843,7 +853,6 @@
 				404F96D81DEBCC97006ECE21 /* LaunchScreen.storyboard in Resources */,
 				6BE210E11EC0B781004469CA /* FCContactCreationCell.xib in Resources */,
 				4060BF7B1EC30F4700BFC98F /* IQKeyboardManager.bundle in Resources */,
-				402C238C1EB2FDDC00DC793C /* Assets.xcassets in Resources */,
 				6BE210D71EC0B1C5004469CA /* FCContactCreationHeaderView.xib in Resources */,
 				404F96D01DEBCC97006ECE21 /* Main.storyboard in Resources */,
 			);
@@ -902,6 +911,7 @@
 				404F972C1DEC0A5B006ECE21 /* FastCallCell.m in Sources */,
 				402C23981EB30F7100DC793C /* FCDataManager.m in Sources */,
 				4060BF731EC30F4700BFC98F /* IQKeyboardManager.m in Sources */,
+				6BF9C87D1ED47419002D2948 /* FCDialButton.m in Sources */,
 				4060BF741EC30F4700BFC98F /* IQKeyboardReturnKeyHandler.m in Sources */,
 				4060BF791EC30F4700BFC98F /* IQToolbar.m in Sources */,
 				4060BF6E1EC30F4700BFC98F /* IQUIScrollView+Additions.m in Sources */,
@@ -959,10 +969,12 @@
 				404F97381DEC223F006ECE21 /* AddContactCell.m in Sources */,
 				402C23911EB300D300DC793C /* FCCollectionView.m in Sources */,
 				404F97061DEBCE8D006ECE21 /* TodayViewController.m in Sources */,
+				6BF9C87A1ED1D43D002D2948 /* FCDialViewController.m in Sources */,
 				404F97851DEC4991006ECE21 /* ContactModel.m in Sources */,
 				402C23951EB300F300DC793C /* FCCollectionLayout.m in Sources */,
 				404F97141DEBD32F006ECE21 /* FastCallCell.m in Sources */,
 				402C23991EB30F7100DC793C /* FCDataManager.m in Sources */,
+				6BF9C87E1ED4807B002D2948 /* FCDialButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

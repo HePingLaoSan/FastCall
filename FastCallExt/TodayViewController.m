@@ -12,6 +12,7 @@
 #import <FCContactModel/FCContactModel.h>
 #import "FastCallCell.h"
 #import <objc/runtime.h>
+#import "FCDialViewController.h"
 
 @interface TodayViewController () <NCWidgetProviding,UICollectionViewDelegate,UICollectionViewDataSource>
 {
@@ -71,6 +72,8 @@
     minimumSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 100);
 
     _emptyInfoLabel.hidden = YES;
+    
+    [self.extensionContext setWidgetLargestAvailableDisplayMode:NCWidgetDisplayModeExpanded];
     
     [self update];
    
@@ -319,4 +322,18 @@
 - (IBAction)clickToHost:(UIButton *)sender {
     [self.extensionContext openURL:[NSURL URLWithString:@"FastCallExt://contact"] completionHandler:nil];
 }
+
+- (IBAction)clickToDialPage:(id)sender {
+    
+    FCDialViewController *dialViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FCDialViewController"];
+    dialViewController.view.frame = self.view.bounds;
+    [self willMoveToParentViewController:nil];
+    [self addChildViewController:dialViewController];
+    [self.view addSubview:dialViewController.view];
+    [self.view removeFromSuperview];
+    [self removeFromParentViewController];
+    [dialViewController didMoveToParentViewController:self];
+    
+}
+
 @end

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCa-Pn-Ryp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.46940944597118406" green="0.75670652142280714" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bWy-aj-blZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="2ts-b1-OPZ">
                                     <size key="itemSize" width="70" height="95"/>
@@ -92,13 +93,37 @@
                                     <action selector="clickToHost:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="8a4-QZ-3jh"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms0-EJ-ec3">
+                                <rect key="frame" x="0.0" y="250" width="320" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30u-gK-5nS">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <state key="normal" title="点击拨号"/>
+                                        <connections>
+                                            <action selector="clickToDialPage:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="pQV-Xr-Izs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="30u-gK-5nS" firstAttribute="top" secondItem="Ms0-EJ-ec3" secondAttribute="top" id="5MS-Sr-7qM"/>
+                                    <constraint firstAttribute="trailing" secondItem="30u-gK-5nS" secondAttribute="trailing" id="6lw-X1-AQc"/>
+                                    <constraint firstAttribute="bottom" secondItem="30u-gK-5nS" secondAttribute="bottom" id="8we-Zo-jS9"/>
+                                    <constraint firstAttribute="height" constant="30" id="FUQ-0S-hRq"/>
+                                    <constraint firstItem="30u-gK-5nS" firstAttribute="leading" secondItem="Ms0-EJ-ec3" secondAttribute="leading" id="MFk-3G-cxd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Ms0-EJ-ec3" secondAttribute="bottom" id="3Q9-Wl-Fj5"/>
+                            <constraint firstItem="Ms0-EJ-ec3" firstAttribute="top" secondItem="bWy-aj-blZ" secondAttribute="bottom" id="51T-JO-BMu"/>
                             <constraint firstItem="JCa-Pn-Ryp" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="8d3-SB-m0I"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="JCa-Pn-Ryp" secondAttribute="bottom" id="EYA-3D-muN"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="JCa-Pn-Ryp" secondAttribute="bottom" constant="30" id="EYA-3D-muN"/>
                             <constraint firstItem="bWy-aj-blZ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="IRV-SD-69W"/>
                             <constraint firstItem="bwo-nT-URh" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="KS5-rG-GBG"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="bWy-aj-blZ" secondAttribute="bottom" id="UDE-6r-iMO"/>
+                            <constraint firstAttribute="trailing" secondItem="Ms0-EJ-ec3" secondAttribute="trailing" id="LbZ-Jb-gyx"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="bWy-aj-blZ" secondAttribute="bottom" constant="30" id="UDE-6r-iMO"/>
+                            <constraint firstItem="Ms0-EJ-ec3" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="Unf-g1-RZP"/>
                             <constraint firstItem="JCa-Pn-Ryp" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="fhH-La-kNY"/>
                             <constraint firstItem="bwo-nT-URh" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="g0d-UX-FbI"/>
                             <constraint firstAttribute="trailing" secondItem="JCa-Pn-Ryp" secondAttribute="trailing" id="h5X-aA-fwB"/>
@@ -124,5 +149,223 @@
             </objects>
             <point key="canvasLocation" x="33.600000000000001" y="37.781109445277366"/>
         </scene>
+        <!--Dial View Controller-->
+        <scene sceneID="zIx-RX-4FF">
+            <objects>
+                <viewController storyboardIdentifier="FCDialViewController" id="MEV-Gx-6So" customClass="FCDialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RZU-wn-Zf4"/>
+                        <viewControllerLayoutGuide type="bottom" id="C6Q-aQ-45u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5gi-eS-BBb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display UR Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxq-h3-10I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DJF-fm-IFY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G24-jj-XF0">
+                                <rect key="frame" x="0.0" y="40" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywA-7o-M9d" customClass="FCDialButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Yrp-vS-lcn"/>
+                                        </constraints>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV1-yn-yFf" customClass="FCDialButton">
+                                        <rect key="frame" x="94" y="0.0" width="94" height="45"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-Ra-sH5" customClass="FCDialButton">
+                                        <rect key="frame" x="188" y="0.0" width="94" height="45"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQr-Y5-3RB" customClass="FCDialButton">
+                                        <rect key="frame" x="282" y="0.0" width="94" height="45"/>
+                                        <state key="normal" title="删除">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyM-ia-7v9" customClass="FCDialButton">
+                                        <rect key="frame" x="0.0" y="45" width="94" height="45"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6o-DL-Tji" customClass="FCDialButton">
+                                        <rect key="frame" x="94" y="45" width="94" height="45"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jR-T4-aJS" customClass="FCDialButton">
+                                        <rect key="frame" x="188" y="45" width="94" height="45"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-vp-jC5" customClass="FCDialButton">
+                                        <rect key="frame" x="0.0" y="90" width="94" height="45"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLU-h6-C0V" customClass="FCDialButton">
+                                        <rect key="frame" x="94" y="90" width="94" height="45"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43d-y7-zTL" customClass="FCDialButton">
+                                        <rect key="frame" x="188" y="90" width="94" height="45"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv4-f6-I6Q" customClass="FCDialButton">
+                                        <rect key="frame" x="0.0" y="135" width="94" height="45"/>
+                                        <state key="normal" title="*">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBY-bh-46g" customClass="FCDialButton">
+                                        <rect key="frame" x="94" y="135" width="94" height="45"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9X-td-z7j" customClass="FCDialButton">
+                                        <rect key="frame" x="188" y="135" width="94" height="45"/>
+                                        <state key="normal" title="#">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOV-sL-rNx" customClass="FCDialButton">
+                                        <rect key="frame" x="282" y="45" width="93" height="135"/>
+                                        <color key="backgroundColor" red="0.0" green="0.67211787564766845" blue="0.13973199670732731" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="Dial">
+                                            <color key="titleColor" red="0.0033746119734334558" green="0.79365689766839376" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="43d-y7-zTL" firstAttribute="leading" secondItem="LLU-h6-C0V" secondAttribute="trailing" id="36c-G4-aRP"/>
+                                    <constraint firstItem="k5x-vp-jC5" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="541-12-cmo"/>
+                                    <constraint firstItem="mVJ-Ra-sH5" firstAttribute="top" secondItem="G24-jj-XF0" secondAttribute="top" id="5hW-vF-T9V"/>
+                                    <constraint firstItem="SV1-yn-yFf" firstAttribute="width" secondItem="ywA-7o-M9d" secondAttribute="width" id="6yC-WN-PYy"/>
+                                    <constraint firstItem="y9X-td-z7j" firstAttribute="width" secondItem="tBY-bh-46g" secondAttribute="width" id="8w1-oP-7Fz"/>
+                                    <constraint firstItem="xyM-ia-7v9" firstAttribute="top" secondItem="SV1-yn-yFf" secondAttribute="bottom" id="9CZ-mD-EQ4"/>
+                                    <constraint firstItem="tBY-bh-46g" firstAttribute="leading" secondItem="Xv4-f6-I6Q" secondAttribute="trailing" id="9P5-m7-NWi"/>
+                                    <constraint firstItem="LLU-h6-C0V" firstAttribute="top" secondItem="r6o-DL-Tji" secondAttribute="bottom" id="AVQ-AY-WKC"/>
+                                    <constraint firstItem="LLU-h6-C0V" firstAttribute="width" secondItem="k5x-vp-jC5" secondAttribute="width" id="BnB-yZ-AC8"/>
+                                    <constraint firstItem="43d-y7-zTL" firstAttribute="top" secondItem="4jR-T4-aJS" secondAttribute="bottom" id="Ced-0q-f5b"/>
+                                    <constraint firstItem="mVJ-Ra-sH5" firstAttribute="leading" secondItem="SV1-yn-yFf" secondAttribute="trailing" id="Cvv-4q-dsT"/>
+                                    <constraint firstItem="Xv4-f6-I6Q" firstAttribute="leading" secondItem="G24-jj-XF0" secondAttribute="leading" id="DVk-8x-d2h"/>
+                                    <constraint firstItem="tBY-bh-46g" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="Dm6-M3-4n0"/>
+                                    <constraint firstItem="y9X-td-z7j" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="E1G-5V-h2H"/>
+                                    <constraint firstItem="tBY-bh-46g" firstAttribute="width" secondItem="Xv4-f6-I6Q" secondAttribute="width" id="Exq-sO-LmT"/>
+                                    <constraint firstItem="Xv4-f6-I6Q" firstAttribute="top" secondItem="k5x-vp-jC5" secondAttribute="bottom" id="G0B-bP-WKq"/>
+                                    <constraint firstItem="4jR-T4-aJS" firstAttribute="top" secondItem="mVJ-Ra-sH5" secondAttribute="bottom" id="HKy-Zq-KXX"/>
+                                    <constraint firstItem="ywA-7o-M9d" firstAttribute="top" secondItem="G24-jj-XF0" secondAttribute="top" id="Hih-Q8-wsl"/>
+                                    <constraint firstItem="kQr-Y5-3RB" firstAttribute="top" secondItem="G24-jj-XF0" secondAttribute="top" id="Ks7-h9-DqE"/>
+                                    <constraint firstItem="r6o-DL-Tji" firstAttribute="leading" secondItem="xyM-ia-7v9" secondAttribute="trailing" id="LK6-JD-5YE"/>
+                                    <constraint firstItem="SV1-yn-yFf" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="LM6-61-XK9"/>
+                                    <constraint firstItem="kQr-Y5-3RB" firstAttribute="width" secondItem="mVJ-Ra-sH5" secondAttribute="width" id="MNK-vx-HMW"/>
+                                    <constraint firstItem="tBY-bh-46g" firstAttribute="top" secondItem="LLU-h6-C0V" secondAttribute="bottom" id="P7I-Tp-Ug5"/>
+                                    <constraint firstItem="4jR-T4-aJS" firstAttribute="leading" secondItem="r6o-DL-Tji" secondAttribute="trailing" id="PC2-eQ-lP2"/>
+                                    <constraint firstItem="kQr-Y5-3RB" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="QAS-X2-sfq"/>
+                                    <constraint firstItem="y9X-td-z7j" firstAttribute="top" secondItem="43d-y7-zTL" secondAttribute="bottom" id="QFo-iH-Isu"/>
+                                    <constraint firstItem="MOV-sL-rNx" firstAttribute="top" secondItem="kQr-Y5-3RB" secondAttribute="bottom" id="S6o-82-QeW"/>
+                                    <constraint firstItem="Xv4-f6-I6Q" firstAttribute="width" secondItem="G24-jj-XF0" secondAttribute="width" multiplier="1:4" id="Sxe-S3-BXr"/>
+                                    <constraint firstItem="k5x-vp-jC5" firstAttribute="width" secondItem="G24-jj-XF0" secondAttribute="width" multiplier="1:4" id="T4f-Ij-grE"/>
+                                    <constraint firstItem="43d-y7-zTL" firstAttribute="width" secondItem="LLU-h6-C0V" secondAttribute="width" id="VWW-mZ-zeE"/>
+                                    <constraint firstItem="xyM-ia-7v9" firstAttribute="leading" secondItem="G24-jj-XF0" secondAttribute="leading" id="XeI-CD-Im2"/>
+                                    <constraint firstItem="43d-y7-zTL" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="XlR-wX-ioj"/>
+                                    <constraint firstItem="k5x-vp-jC5" firstAttribute="leading" secondItem="G24-jj-XF0" secondAttribute="leading" id="Yjn-IE-ri0"/>
+                                    <constraint firstItem="Xv4-f6-I6Q" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="bAh-yu-Lig"/>
+                                    <constraint firstItem="MOV-sL-rNx" firstAttribute="leading" secondItem="y9X-td-z7j" secondAttribute="trailing" id="bBG-jo-OkC"/>
+                                    <constraint firstItem="kQr-Y5-3RB" firstAttribute="leading" secondItem="mVJ-Ra-sH5" secondAttribute="trailing" id="bbK-Tg-K0s"/>
+                                    <constraint firstItem="ywA-7o-M9d" firstAttribute="width" secondItem="G24-jj-XF0" secondAttribute="width" multiplier="1:4" id="cga-1e-bWR"/>
+                                    <constraint firstItem="LLU-h6-C0V" firstAttribute="leading" secondItem="k5x-vp-jC5" secondAttribute="trailing" id="dM8-NK-zbN"/>
+                                    <constraint firstItem="4jR-T4-aJS" firstAttribute="width" secondItem="r6o-DL-Tji" secondAttribute="width" id="dUG-qu-tdA"/>
+                                    <constraint firstItem="r6o-DL-Tji" firstAttribute="top" secondItem="SV1-yn-yFf" secondAttribute="bottom" id="dnk-uq-hmo"/>
+                                    <constraint firstItem="k5x-vp-jC5" firstAttribute="top" secondItem="xyM-ia-7v9" secondAttribute="bottom" id="eKy-ic-QIQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="MOV-sL-rNx" secondAttribute="trailing" id="eZC-vW-am4"/>
+                                    <constraint firstItem="y9X-td-z7j" firstAttribute="leading" secondItem="tBY-bh-46g" secondAttribute="trailing" id="feG-k3-E4b"/>
+                                    <constraint firstItem="xyM-ia-7v9" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="iUo-uZ-hbr"/>
+                                    <constraint firstItem="MOV-sL-rNx" firstAttribute="bottom" secondItem="y9X-td-z7j" secondAttribute="bottom" id="iv6-d1-I4q"/>
+                                    <constraint firstItem="ywA-7o-M9d" firstAttribute="leading" secondItem="G24-jj-XF0" secondAttribute="leading" id="lZ3-35-rCc"/>
+                                    <constraint firstItem="r6o-DL-Tji" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="ml2-in-bdD"/>
+                                    <constraint firstItem="LLU-h6-C0V" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="pih-g4-qIs"/>
+                                    <constraint firstItem="SV1-yn-yFf" firstAttribute="top" secondItem="G24-jj-XF0" secondAttribute="top" id="q3z-GX-UxZ"/>
+                                    <constraint firstItem="mVJ-Ra-sH5" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="qSy-jL-Jif"/>
+                                    <constraint firstItem="r6o-DL-Tji" firstAttribute="width" secondItem="xyM-ia-7v9" secondAttribute="width" id="ryA-u7-Bna"/>
+                                    <constraint firstItem="4jR-T4-aJS" firstAttribute="height" secondItem="ywA-7o-M9d" secondAttribute="height" id="vkX-HO-Bbb"/>
+                                    <constraint firstItem="SV1-yn-yFf" firstAttribute="leading" secondItem="ywA-7o-M9d" secondAttribute="trailing" id="xiO-Qi-Fyd"/>
+                                    <constraint firstItem="mVJ-Ra-sH5" firstAttribute="width" secondItem="SV1-yn-yFf" secondAttribute="width" id="yvg-5X-hG3"/>
+                                    <constraint firstItem="xyM-ia-7v9" firstAttribute="width" secondItem="G24-jj-XF0" secondAttribute="width" multiplier="1:4" id="zw9-Un-m9E"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPH-8v-cUZ">
+                                <rect key="frame" x="0.0" y="240" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr0-Ff-dHn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="点击联系人"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Xr0-Ff-dHn" secondAttribute="trailing" id="GHe-H5-utD"/>
+                                    <constraint firstItem="Xr0-Ff-dHn" firstAttribute="leading" secondItem="WPH-8v-cUZ" secondAttribute="leading" id="HNL-zy-2ib"/>
+                                    <constraint firstAttribute="height" constant="30" id="V5N-pi-qhj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xr0-Ff-dHn" secondAttribute="bottom" id="VVE-OU-Vhp"/>
+                                    <constraint firstItem="Xr0-Ff-dHn" firstAttribute="top" secondItem="WPH-8v-cUZ" secondAttribute="top" id="Wxp-Vu-UDS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="kfZ-n4-w27"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G24-jj-XF0" firstAttribute="top" secondItem="Rxq-h3-10I" secondAttribute="bottom" id="FLp-4E-3zs"/>
+                            <constraint firstAttribute="trailing" secondItem="Rxq-h3-10I" secondAttribute="trailing" id="FQ0-SG-9DU"/>
+                            <constraint firstItem="Rxq-h3-10I" firstAttribute="top" secondItem="RZU-wn-Zf4" secondAttribute="bottom" id="H3i-Gt-fcX"/>
+                            <constraint firstItem="WPH-8v-cUZ" firstAttribute="top" secondItem="G24-jj-XF0" secondAttribute="bottom" id="L8o-Wm-VS6"/>
+                            <constraint firstItem="Rxq-h3-10I" firstAttribute="leading" secondItem="5gi-eS-BBb" secondAttribute="leading" id="Mvp-fG-2se"/>
+                            <constraint firstItem="WPH-8v-cUZ" firstAttribute="leading" secondItem="5gi-eS-BBb" secondAttribute="leading" id="d1F-nX-0zV"/>
+                            <constraint firstAttribute="trailing" secondItem="G24-jj-XF0" secondAttribute="trailing" id="fVy-XU-MH4"/>
+                            <constraint firstItem="G24-jj-XF0" firstAttribute="leading" secondItem="5gi-eS-BBb" secondAttribute="leading" id="jcR-vZ-CrA"/>
+                            <constraint firstItem="C6Q-aQ-45u" firstAttribute="top" secondItem="WPH-8v-cUZ" secondAttribute="bottom" id="pIp-Hx-pf7"/>
+                            <constraint firstAttribute="trailing" secondItem="WPH-8v-cUZ" secondAttribute="trailing" id="wfz-Fn-mRf"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="270"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9az-4i-BE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677.60000000000002" y="37.781109445277366"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Dial" width="64" height="63"/>
+    </resources>
 </document>
